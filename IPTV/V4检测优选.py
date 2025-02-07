@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 #  获取远程港澳台直播源文件
-#url = "https://raw.bgithub.xyz/frxz751113/AAAAA/main/IPTV/TW.txt"          #源采集地址
+#url = "https://raw.github.com/WaykeYu/verify-iptv/main/IPTV/TW.txt"          #源采集地址
 #r = requests.get(url)
 #open('TW.txt','wb').write(r.content)         #打开源文件并临时写入
 
