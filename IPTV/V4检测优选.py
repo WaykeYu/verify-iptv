@@ -10,9 +10,9 @@ import time
 # 定義遠程地址
 url="https://raw.github.com/WaykeYu/verify-iptv/main/IPTV/TW.txt"
 # 下載 GAT.m3u
-wget -q --show-progress --timeout=10 -O GAT.m3u "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u" || { echo "❌ GAT.m3u 下載失敗！"; exit 1; }
+wget -q --show-progress --timeout=10 -O GAT.m3u "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
 # 下載 TW.txt
-wget -q --show-progress --timeout=10 -O TW.txt "$url" || { echo "❌ TW.txt 下載失敗！"; exit 1; }
+wget -q --show-progress --timeout=10 -O TW.txt "$url"
 # 確保文件格式正確
 grep -q "^#EXTM3U" GAT.m3u || sed -i '1i #EXTM3U' GAT.m3u
 sed -i '/^\s*$/d' GAT.m3u  # 刪除空行
