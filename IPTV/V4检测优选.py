@@ -7,8 +7,6 @@ from concurrent.futures import ThreadPoolExecutor
 import time
 
 #獲取遠程文件
-# 移除舊文件
-rm -f GAT.m3u TW.txt
 # 定義遠程地址
 url="https://raw.github.com/WaykeYu/verify-iptv/main/IPTV/TW.txt"
 # 下載 GAT.m3u
