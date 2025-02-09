@@ -6,16 +6,10 @@ from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import time
 
-#獲取遠程文件
-# 定義遠程地址
-url="https://raw.github.com/WaykeYu/verify-iptv/main/IPTV/TW.txt"
-# 下載 GAT.m3u
-wget -q --show-progress --timeout=10 -O GAT.m3u "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
-# 下載 TW.txt
-wget -q --show-progress --timeout=10 -O TW.txt "$url"
-# 確保文件格式正確
-grep -q "^#EXTM3U" GAT.m3u || sed -i '1i #EXTM3U' GAT.m3u
-sed -i '/^\s*$/d' GAT.m3u  # 刪除空行
+#  获取远程港澳台直播源文件
+url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/refs/heads/main/IPTV/TW.txt"          #源采集地址
+r = requests.get(url)
+open('TW.txt','wb').write(r.content)         #打开源文件并临时写入
 
 
 # 函数：获取视频分辨率
