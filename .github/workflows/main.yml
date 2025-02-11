@@ -34,6 +34,9 @@ jobs:
       #- name: Run iptv
         #run: python ${{ github.workspace }}/IPTV/分类去重.py
 
+      # readme.md
+        echo "Auto Update IPTV in ${{ steps.date.outputs.date }} " > README.md
+
       # 提交和推送的步骤，不再检查文件是否发生变化
       - name: Commit and push changes
         run: |
