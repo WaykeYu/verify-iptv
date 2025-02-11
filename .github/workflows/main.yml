@@ -1,4 +1,4 @@
-name: 頻道過濾检测
+name: 有效性检测
 
 on:
   schedule:
