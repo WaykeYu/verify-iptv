@@ -1,6 +1,7 @@
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
+from tqdm import tqdm  # 導入 tqdm
 
 # 下載 M3U 檔案
 def download_m3u_file(url, save_path):
