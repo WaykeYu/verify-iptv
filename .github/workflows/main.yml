@@ -28,10 +28,13 @@ jobs:
       #- name: Run iptv
         #run: python ${{ github.workspace }}/IPTV/V4检测优选.py
           
+      #- name: Run iptv  
+        #run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
+        
       - name: Run iptv  
-        run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
-
-      #- name: Run iptv
+        run: python ${{ github.workspace }}/IPTV/gat頻道過濾.py
+       
+     #- name: Run iptv
         #run: python ${{ github.workspace }}/IPTV/分类去重.py
 
       # readme.md
