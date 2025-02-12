@@ -84,7 +84,7 @@ def main(source_file_path, output_file_path):
 
 if __name__ == "__main__":
     source_file_path = 'IPTV/zho.m3u'  # 替换为你的源文件路径
-    output_file_path = 'TW'  # 替换为你的输出文件路径,不要后缀名
+    output_file_path = 'zho'  # 替换为你的输出文件路径,不要后缀名
     main(source_file_path, output_file_path)
 
 
