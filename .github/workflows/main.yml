@@ -25,11 +25,11 @@ jobs:
           pip install --upgrade pip
           pip install selenium requests futures eventlet opencv-python Beautifulsoup4 translate termcolor func_timeout replace input opencc pypinyin pytz tqdm
 
-      - name: Run iptv
-        run: python ${{ github.workspace }}/IPTV/V4检测优选.py
-        
-      #- name: Run iptv  
-        #run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
+      #- name: Run iptv
+        #run: python ${{ github.workspace }}/IPTV/V4检测优选.py
+          
+      - name: Run iptv  
+        run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
 
       #- name: Run iptv
         #run: python ${{ github.workspace }}/IPTV/分类去重.py
@@ -38,7 +38,7 @@ jobs:
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d %H:%M:%S CST')" >> $GITHUB_ENV
-          echo "有效性自動檢測 IPTV in ${{ env.date }} " > README.md
+          echo "有效性自動檢測 IPTV ${{ env.date }} " > README.md
 
       # 提交和推送的步骤，不再检查文件是否发生变化
       - name: Commit and push changes
