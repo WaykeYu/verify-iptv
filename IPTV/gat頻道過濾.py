@@ -9,6 +9,7 @@ import time
 
 #  获取远程港澳台直播源文件
 # 下載檔案的 URL
+import os
 url = "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
 
 # 本地保存的路徑
