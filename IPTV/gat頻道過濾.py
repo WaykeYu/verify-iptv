@@ -3,16 +3,27 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 from tqdm import tqdm  # 導入 tqdm
 
-# 下載 M3U 檔案
-def download_m3u_file(url, save_path):
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(save_path, 'wb') as file:
-            file.write(response.content)
-        print(f"檔案已成功下載並保存到 {save_path}")
-    else:
-        print(f"無法下載檔案，HTTP 狀態碼: {response.status_code}")
-        exit()
+# 下載檔案的 URL
+url = "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
+
+# 本地保存的路徑
+save_path = "https://github.com/WaykeYu/verify-iptv/tree/main/IPTV/GAT.m3u"
+
+# 確保目錄存在
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
+# 下載檔案
+response = requests.get(url)
+
+# 檢查請求是否成功
+if response.status_code == 200:
+    # 將內容寫入檔案
+    with open(save_path, 'wb') as file:
+        file.write(response.content)
+    print(f"檔案已成功下載並保存到 {save_path}")
+else:
+    print(f"無法下載檔案，HTTP 狀態碼: {response.status_code}")
+
 
 # 去除重複頻道並排序
 def remove_duplicates_and_sort(input_file, output_file):
