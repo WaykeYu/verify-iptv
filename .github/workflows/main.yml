@@ -34,7 +34,10 @@ jobs:
         
       - name: Run iptv  
         run: python ${{ github.workspace }}/IPTV/gat頻道過濾.py
-       
+        
+      - name: Run iptv  
+        run: python ${{ github.workspace }}/IPTV/IPTV/adult頻道過濾.py
+        
      #- name: Run iptv
         #run: python ${{ github.workspace }}/IPTV/分类去重.py
 
