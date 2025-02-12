@@ -8,8 +8,6 @@ UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UB
 TW_FILENAME = "TW_allsource.txt"
 UBTV_FILENAME = "UBTV.txt"
 MERGED_FILENAME = "TW_allsource.m3u"
-LOCAL_REPO = "MyTV_tw"
-REPO_URL = "git@github.com:WaykeYu/MyTV_tw.git"  # 使用 SSH 方式推送，確保你已經設置 SSH 金鑰
 
 # 下載檔案
 def download_file(url, filename):
@@ -39,22 +37,16 @@ def convert_to_m3u(input_files, output_file):
 
 # Git 操作
 def git_commit_and_push():
-    # 如果倉庫不存在，先 clone
-    if not os.path.isdir(LOCAL_REPO):
-        print("克隆 GitHub 倉庫...")
-        subprocess.run(["git", "clone", REPO_URL])
+    print("提交並推送變更到 GitHub...")
 
-    # 進入倉庫目錄
-    os.chdir(LOCAL_REPO)
-
-    # 移動 M3U 檔案到倉庫資料夾
-    os.rename(f"../{MERGED_FILENAME}", MERGED_FILENAME)
+    # Git 設定
+    subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"])
+    subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"])
 
     # Git 提交與推送
-    print("提交並推送變更到 GitHub...")
     subprocess.run(["git", "add", MERGED_FILENAME])
-    subprocess.run(["git", "commit", "-m", "更新 M3U 合併檔"])
-    subprocess.run(["git", "push", "origin", "main"])
+    subprocess.run(["git", "commit", "-m", "自動更新 M3U 檔案"], check=True)
+    subprocess.run(["git", "push"], check=True)
 
     print("推送完成！")
 
