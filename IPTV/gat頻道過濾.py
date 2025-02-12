@@ -6,10 +6,35 @@ from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import time
 
+
 #  获取远程港澳台直播源文件
-url = "https://live.hacks.tools/iptv/languages/GAT.m3u"          #源采集地址
-r = requests.get(url)
-open('GAT.m3u','wb').write(r.content)         #打开源文件并临时写入
+# 下載檔案的 URL
+url = "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
+
+# 本地保存的路徑
+save_path = "https://github.com/WaykeYu/verify-iptv/tree/main/IPTV/GAT.m3u"
+
+# 確保目錄存在
+os.makedirs(os.path.dirname(save_path), exist_ok=True)
+
+# 下載檔案
+response = requests.get(url)
+
+# 檢查請求是否成功
+if response.status_code == 200:
+    # 將內容寫入檔案
+    with open(save_path, 'wb') as file:
+        file.write(response.content)
+    print(f"檔案已成功下載並保存到 {save_path}")
+else:
+    print(f"無法下載檔案，HTTP 狀態碼: {response.status_code}")
+
+
+
+
+
+
+
 
 
 # 函数：获取视频分辨率
@@ -87,70 +112,59 @@ if __name__ == "__main__":
     output_file_path = 'GAT'  # 替换为你的输出文件路径,不要后缀名
     main(source_file_path, output_file_path)
 
+import requests
+import os
 
+# 下載檔案的 URL
+url = "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u"
 
-# 初始化酒店源字典
-detected_ips = {}
-# 存储文件路径
-file_path = "GAT.m3u"
-output_file_path = "GAT.m3u"
-def get_ip_key(url):
-    """从URL中提取IP地址,并构造一个唯一的键"""
-    # 找到'//'到第三个'.'之间的字符串
-    start = url.find('://') + 3  # '://'.length 是 3
-    end = start
-    dot_count = 0
-    while dot_count < 3:
-        end = url.find('.', end)
-        if end == -1:  # 如果没有找到第三个'.',就结束
-            break
-        dot_count += 1
-    return url[start:end] if dot_count == 3 else None
-# 打开输入文件和输出文件
-with open(file_path, 'r', encoding='utf-8') as file:
+# 本地保存的路徑
+save_path = "GAT.m3u"
+
+# 下載檔案
+response = requests.get(url)
+
+# 檢查請求是否成功
+if response.status_code != 200:
+    print(f"無法下載檔案，HTTP 狀態碼: {response.status_code}")
+    exit()
+
+# 將內容寫入臨時檔案
+with open(save_path, 'wb') as file:
+    file.write(response.content)
+
+print(f"檔案已成功下載並保存到 {save_path}")
+
+# 讀取 M3U 檔案內容
+with open(save_path, 'r', encoding='utf-8') as file:
     lines = file.readlines()
-# 获取总行数用于进度条
-total_lines = len(lines)
-# 写入通过检测的行到新文件
-with open(output_file_path, 'w', encoding='utf-8') as output_file:
-    # 使用tqdm显示进度条
-    for i, line in tqdm(enumerate(lines), total=total_lines, desc="Processing", unit='line'):
-        # 检查是否包含 'genre'
-        if 'genre' in line:
-            output_file.write(line)
-            continue
-        # 分割频道名称和URL,并去除空白字符
-        parts = line.split(',', 1)
-        if len(parts) == 2:
-            channel_name, url = parts
-            channel_name = channel_name.strip()
-            url = url.strip()
-            # 构造IP键
-            ip_key = get_ip_key(url)
-            if ip_key and ip_key in detected_ips:
-                # 如果IP键已存在,根据之前的结果决定是否写入新文件
-                if detected_ips[ip_key]['status'] == 'ok':
-                    output_file.write(line)
-            elif ip_key:  # 新IP键,进行检测
-                # 进行检测
-                cap = cv2.VideoCapture(url)
-                start_time = time.time()
-                frame_count = 0
-                # 尝试捕获10秒内的帧
-                while frame_count < 200 and (time.time() - start_time) < 10:
-                    ret, frame = cap.read()
-                    if not ret:
-                        break
-                    frame_count += 1
-                # 释放资源
-                cap.release()
-                # 根据捕获的帧数判断状态并记录结果
-                if frame_count >= 200:  #10秒内超过230帧则写入
-                    detected_ips[ip_key] = {'status': 'ok'}
-                    output_file.write(line)  # 写入检测通过的行
-                else:
-                    detected_ips[ip_key] = {'status': 'fail'}
-# 打印酒店源
-for ip_key, result in detected_ips.items():
-    print(f"IP Key: {ip_key}, Status: {result['status']}")
+
+# 過濾無效頻道
+valid_lines = []
+for i in range(0, len(lines), 2):  # M3U 檔案格式：每兩行一組（頻道資訊 + URL）
+    if i + 1 >= len(lines):
+        break
+
+    channel_info = lines[i].strip()
+    channel_url = lines[i + 1].strip()
+
+    # 檢查 URL 是否有效
+    try:
+        response = requests.get(channel_url, timeout=5)  # 設置超時時間為 5 秒
+        if response.status_code == 200:
+            valid_lines.append(channel_info + "\n")
+            valid_lines.append(channel_url + "\n")
+            print(f"有效頻道: {channel_info}")
+        else:
+            print(f"無效頻道 (HTTP {response.status_code}): {channel_info}")
+    except requests.exceptions.RequestException as e:
+        print(f"無效頻道 (請求失敗): {channel_info} - {e}")
+
+# 將有效頻道寫回原檔案
+with open(save_path, 'w', encoding='utf-8') as file:
+    file.writelines(valid_lines)
+
+print("無效頻道已移除，檔案已更新。")
+
+
 
