@@ -1,61 +1,81 @@
 import requests
 import os
 import subprocess
+import logging
+from typing import List
 
 # 設定變數
 TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_allsource"
 UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV"
 TW_FILENAME = "TW_allsource.txt"
 UBTV_FILENAME = "UBTV.txt"
-MERGED_FILENAME = "TW_allsource.m3u"
+GITHUB_REPO_DIR = "/path/to/local/github/repo"  # 替換為你的本地 GitHub 倉庫路徑
+SOURCE_DIR = os.path.join(GITHUB_REPO_DIR, "source")  # 文件存儲到 source 目錄
+
+# 配置日誌
+logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s")
+logger = logging.getLogger(__name__)
 
 # 下載檔案
-def download_file(url, filename):
-    print(f"正在下載 {url} ...")
-    response = requests.get(url)
-    if response.status_code == 200:
+def download_file(url: str, filename: str) -> None:
+    logger.info(f"正在下載 {url} ...")
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # 檢查 HTTP 狀態碼
         with open(filename, "w", encoding="utf-8") as file:
             file.write(response.text)
-        print(f"{filename} 下載完成！")
-    else:
-        print(f"下載 {filename} 失敗，HTTP 狀態碼: {response.status_code}")
+        logger.info(f"{filename} 下載完成！")
+    except requests.exceptions.RequestException as e:
+        logger.error(f"下載 {filename} 失敗: {e}")
         exit(1)
 
-# 轉換為 M3U 格式
-def convert_to_m3u(input_files, output_file):
-    print("正在轉換為 M3U 格式...")
-    with open(output_file, "w", encoding="utf-8") as outfile:
-        outfile.write("#EXTM3U\n")
-        for input_file in input_files:
-            with open(input_file, "r", encoding="utf-8") as infile:
-                for line in infile:
-                    parts = line.strip().split(",")
-                    if len(parts) == 2:
-                        name, url = parts
-                        outfile.write(f"#EXTINF:-1,{name}\n{url}\n")
-    print(f"轉換完成，已儲存為 {output_file}")
+# 將文件移動到 GitHub 倉庫的 source 目錄
+def move_to_source_dir(filename: str) -> None:
+    try:
+        if not os.path.exists(SOURCE_DIR):
+            os.makedirs(SOURCE_DIR)
+        os.rename(filename, os.path.join(SOURCE_DIR, filename))
+        logger.info(f"文件已移動到 {SOURCE_DIR}")
+    except Exception as e:
+        logger.error(f"移動文件失敗: {e}")
+        exit(1)
 
 # Git 操作
-def git_commit_and_push():
-    print("提交並推送變更到 GitHub...")
+def git_commit_and_push() -> None:
+    logger.info("提交並推送變更到 GitHub...")
+    try:
+        # 進入 GitHub 倉庫目錄
+        os.chdir(GITHUB_REPO_DIR)
 
-    # Git 設定
-    subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"])
-    subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"])
+        # Git 設定
+        subprocess.run(["git", "config", "--global", "user.name", "github-actions[bot]"], check=True)
+        subprocess.run(["git", "config", "--global", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
 
-    # Git 提交與推送
-    subprocess.run(["git", "add", MERGED_FILENAME])
-    subprocess.run(["git", "commit", "-m", "自動更新 M3U 檔案"], check=True)
-    subprocess.run(["git", "push"], check=True)
-
-    print("推送完成！")
+        # Git 提交與推送
+        subprocess.run(["git", "add", "source"], check=True)
+        subprocess.run(["git", "commit", "-m", "自動更新源文件"], check=True)
+        subprocess.run(["git", "push"], check=True)
+        logger.info("推送完成！")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Git 操作失敗: {e}")
+        exit(1)
 
 # 執行流程
-def main():
-    download_file(TW_URL, TW_FILENAME)
-    download_file(UBTV_URL, UBTV_FILENAME)
-    convert_to_m3u([TW_FILENAME, UBTV_FILENAME], MERGED_FILENAME)
-    git_commit_and_push()
+def main() -> None:
+    try:
+        # 下載文件
+        download_file(TW_URL, TW_FILENAME)
+        download_file(UBTV_URL, UBTV_FILENAME)
+
+        # 將文件移動到 source 目錄
+        move_to_source_dir(TW_FILENAME)
+        move_to_source_dir(UBTV_FILENAME)
+
+        # Git 操作
+        git_commit_and_push()
+    except Exception as e:
+        logger.error(f"腳本執行失敗: {e}")
+        exit(1)
 
 if __name__ == "__main__":
     main()
