@@ -17,9 +17,9 @@ logging.basicConfig(
 CONFIG = {
     "m3u_url": "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/Adult.m3u",
     "save_path": "./Adult.m3u",  # 本地保存路徑
-    "max_workers": 5,  # 最大線程數
-    "request_timeout": 5,  # 請求超時時間（秒）
-    "random_delay": (0.5, 1.5),  # 隨機延遲範圍（秒）
+    "max_workers": 10,  # 增加線程數
+    "request_timeout": 3,  # 減少超時時間
+    "random_delay": (0.1, 0.5),  # 減少隨機延遲範圍
 }
 
 # 下載 M3U 檔案
@@ -65,12 +65,12 @@ def remove_duplicates_and_sort(input_file):
 
     logging.info(f"已去除重複頻道並排序，結果保存到 {input_file}")
 
-# 檢查頻道有效性
+# 檢查頻道有效性（使用 HEAD 請求）
 def check_channel_validity(channel_info, channel_url):
     try:
         # 隨機延遲，避免頻繁請求
         time.sleep(random.uniform(*CONFIG["random_delay"]))
-        response = requests.get(channel_url, timeout=CONFIG["request_timeout"])
+        response = requests.head(channel_url, timeout=CONFIG["request_timeout"])
         return channel_info, channel_url, response.status_code == 200
     except requests.exceptions.RequestException as e:
         logging.debug(f"頻道檢查失敗: {channel_info} - {e}")
