@@ -1,0 +1,2 @@
+2025-02-13 06:22:26,106 - INFO - 開始下載 M3U 檔案: https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/GAT.m3u
+2025-02-13 06:22:26,106 - ERROR - 程式執行失敗: name 'requests' is not defined
