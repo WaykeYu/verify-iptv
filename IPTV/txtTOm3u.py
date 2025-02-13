@@ -7,7 +7,7 @@ from datetime import datetime
 # 設定變數
 TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_allsource"
 UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV"
-TV7708_URL = "https://raw.githubusercontent.com/ji3g4ao3sm3/tv/refs/heads/main/TV7708.txt"
+TV7708_URL = "https://raw.githubusercontent.com/ji3g4ao3sm3/tv/refs/heads/main/7708.txt"
 TW_FILENAME = "TW_allsource.m3u"  # 副檔名改為 .m3u
 UBTV_FILENAME = "UBTV.m3u"  # 副檔名改為 .m3u
 TV7708_FILENAME = "TV7708.m3u"  # 副檔名改為 .m3u
