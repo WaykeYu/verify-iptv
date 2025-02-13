@@ -3,7 +3,6 @@ import asyncio
 import os
 import logging
 from tqdm import tqdm
-import requests  # 添加 requests 模組用於下載 M3U 檔案
 
 # 設置日誌記錄
 logging.basicConfig(
