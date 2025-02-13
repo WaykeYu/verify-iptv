@@ -40,7 +40,7 @@ jobs:
         #run: python ${{ github.workspace }}/IPTV/gat頻道過濾.py
 
       - name: Run iptv  
-        run: python ${{ github.workspace }}/IPTV/gat異步頻道過濾.py
+        run: python ${{ github.workspace }}/IPTV/gat_async_filter.py
         
       #- name: Run iptv  
         #run: python ${{ github.workspace }}/IPTV/adult頻道過濾.py
