@@ -2,7 +2,6 @@ import requests
 import os
 import subprocess
 import logging
-from typing import List
 from datetime import datetime
 
 # 設定變數
@@ -10,7 +9,7 @@ TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_a
 UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV"
 TW_FILENAME = "TW_allsource.txt"
 UBTV_FILENAME = "UBTV.txt"
-GITHUB_REPO_DIR = "/path/to/local/github/repo"  # 替換為你的本地 GitHub 倉庫路徑
+GITHUB_REPO_DIR = "/home/runner/work/verify-iptv/verify-iptv"  # GitHub Actions 的工作目錄
 SOURCE_DIR = os.path.join(GITHUB_REPO_DIR, "source")  # 文件存儲到 source 目錄
 README_FILE = os.path.join(SOURCE_DIR, "README.md")  # README 文件路徑
 
@@ -34,8 +33,10 @@ def download_file(url: str, filename: str) -> None:
 # 將文件移動到 GitHub 倉庫的 source 目錄
 def move_to_source_dir(filename: str) -> None:
     try:
+        # 確保 source 目錄存在
         if not os.path.exists(SOURCE_DIR):
             os.makedirs(SOURCE_DIR)
+        # 移動文件
         os.rename(filename, os.path.join(SOURCE_DIR, filename))
         logger.info(f"文件已移動到 {SOURCE_DIR}")
     except Exception as e:
