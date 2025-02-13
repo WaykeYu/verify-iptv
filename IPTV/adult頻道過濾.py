@@ -1,23 +1,46 @@
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
-from tqdm import tqdm  # 導入 tqdm 用於顯示進度條
+import time
+import random
+import logging
+from tqdm import tqdm
+
+# 設置日誌記錄
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[logging.FileHandler("gat_channel_filter.log"), logging.StreamHandler()],
+)
+
+# 配置文件
+CONFIG = {
+    "m3u_url": "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/Adult.m3u",
+    "save_path": "./Adult.m3u",  # 本地保存路徑
+    "max_workers": 5,  # 最大線程數
+    "request_timeout": 5,  # 請求超時時間（秒）
+    "random_delay": (0.5, 1.5),  # 隨機延遲範圍（秒）
+}
 
 # 下載 M3U 檔案
 def download_m3u_file(url, save_path):
-    response = requests.get(url)
-    if response.status_code == 200:
-        with open(save_path, 'wb') as file:
+    try:
+        logging.info(f"開始下載 M3U 檔案: {url}")
+        response = requests.get(url)
+        response.raise_for_status()  # 檢查 HTTP 錯誤
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)  # 確保目錄存在
+        with open(save_path, "wb") as file:
             file.write(response.content)
-        print(f"檔案已成功下載並保存到 {save_path}")
-    else:
-        print(f"無法下載檔案，HTTP 狀態碼: {response.status_code}")
-        exit()
+        logging.info(f"檔案已成功下載並保存到 {save_path}")
+    except requests.exceptions.RequestException as e:
+        logging.error(f"無法下載檔案: {e}")
+        raise
 
 # 去除重複頻道並排序
 def remove_duplicates_and_sort(input_file):
+    logging.info("開始去除重複頻道並排序...")
     channels = {}
-    with open(input_file, 'r', encoding='utf-8') as file:
+    with open(input_file, "r", encoding="utf-8") as file:
         lines = file.readlines()
 
     i = 0
@@ -35,32 +58,33 @@ def remove_duplicates_and_sort(input_file):
     sorted_channels = sorted(channels.items(), key=lambda x: x[1])
 
     # 寫回原檔案
-    with open(input_file, 'w', encoding='utf-8') as file:
+    with open(input_file, "w", encoding="utf-8") as file:
         for url, info in sorted_channels:
             file.write(info + "\n")
             file.write(url + "\n")
 
-    print(f"已去除重複頻道並排序，結果保存到 {input_file}")
+    logging.info(f"已去除重複頻道並排序，結果保存到 {input_file}")
 
 # 檢查頻道有效性
 def check_channel_validity(channel_info, channel_url):
     try:
-        response = requests.get(channel_url, timeout=5)  # 設置超時時間為 5 秒
-        if response.status_code == 200:
-            return channel_info, channel_url, True
-        else:
-            return channel_info, channel_url, False
+        # 隨機延遲，避免頻繁請求
+        time.sleep(random.uniform(*CONFIG["random_delay"]))
+        response = requests.get(channel_url, timeout=CONFIG["request_timeout"])
+        return channel_info, channel_url, response.status_code == 200
     except requests.exceptions.RequestException as e:
+        logging.debug(f"頻道檢查失敗: {channel_info} - {e}")
         return channel_info, channel_url, False
 
 # 過濾無效頻道
 def filter_invalid_channels(input_file):
-    with open(input_file, 'r', encoding='utf-8') as file:
+    logging.info("開始檢查頻道有效性...")
+    with open(input_file, "r", encoding="utf-8") as file:
         lines = file.readlines()
 
     valid_lines = []
     futures = []
-    with ThreadPoolExecutor(max_workers=10) as executor:  # 使用多線程檢查
+    with ThreadPoolExecutor(max_workers=CONFIG["max_workers"]) as executor:
         for i in range(0, len(lines), 2):
             if i + 1 >= len(lines):
                 break
@@ -73,32 +97,31 @@ def filter_invalid_channels(input_file):
             if is_valid:
                 valid_lines.append(channel_info + "\n")
                 valid_lines.append(channel_url + "\n")
-                print(f"有效頻道: {channel_info}")
+                logging.info(f"有效頻道: {channel_info}")
             else:
-                print(f"無效頻道: {channel_info}")
+                logging.warning(f"無效頻道: {channel_info}")
 
     # 寫回原檔案
-    with open(input_file, 'w', encoding='utf-8') as file:
+    with open(input_file, "w", encoding="utf-8") as file:
         file.writelines(valid_lines)
 
-    print("無效頻道已移除，檔案已更新。")
+    logging.info("無效頻道已移除，檔案已更新。")
 
 # 主程式
+def main():
+    try:
+        # 1. 下載檔案
+        download_m3u_file(CONFIG["m3u_url"], CONFIG["save_path"])
+
+        # 2. 去除重複頻道並排序
+        remove_duplicates_and_sort(CONFIG["save_path"])
+
+        # 3. 檢查頻道有效性並移除無效頻道
+        filter_invalid_channels(CONFIG["save_path"])
+
+        logging.info("所有操作已完成！")
+    except Exception as e:
+        logging.error(f"程式執行失敗: {e}")
+
 if __name__ == "__main__":
-    # 檔案 URL 和本地路徑
-    url = "https://raw.githubusercontent.com/WaykeYu/IPTV1/refs/heads/main/Adult.m3u"
-    save_path = "./adult.m3u"  # 本地保存路徑
-
-    # 1. 下載檔案
-    print("正在下載檔案...")
-    download_m3u_file(url, save_path)
-
-    # 2. 去除重複頻道並排序
-    print("正在去除重複頻道並排序...")
-    remove_duplicates_and_sort(save_path)
-
-    # 3. 檢查頻道有效性並移除無效頻道
-    print("正在檢查頻道有效性...")
-    filter_invalid_channels(save_path)
-
-    print("所有操作已完成！")
+    main()
