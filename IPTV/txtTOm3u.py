@@ -7,8 +7,10 @@ from datetime import datetime
 # 設定變數
 TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_allsource"
 UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV"
+7708_URL = "https://raw.githubusercontent.com/ji3g4ao3sm3/tv/refs/heads/main/7708.txt"
 TW_FILENAME = "TW_allsource.m3u"  # 副檔名改為 .m3u
 UBTV_FILENAME = "UBTV.m3u"  # 副檔名改為 .m3u
+7708_FILENAME = "7708.m3u"  # 副檔名改為 .m3u
 GITHUB_REPO_DIR = "/home/runner/work/verify-iptv/verify-iptv"  # GitHub Actions 的工作目錄
 SOURCE_DIR = os.path.join(GITHUB_REPO_DIR, "source")  # 文件存儲到 source 目錄
 README_FILE = os.path.join(SOURCE_DIR, "README.md")  # README 文件路徑
@@ -63,6 +65,7 @@ def update_readme() -> None:
             file.write(f"## 文件列表\n")
             file.write(f"- `{TW_FILENAME}`\n")
             file.write(f"- `{UBTV_FILENAME}`\n")
+            file.write(f"- `{7708_FILENAME}`\n")
         logger.info(f"README.md 已更新！")
     except Exception as e:
         logger.error(f"更新 README.md 失敗: {e}")
@@ -94,10 +97,12 @@ def main() -> None:
         # 下載並轉換文件
         download_and_convert_to_m3u(TW_URL, TW_FILENAME)
         download_and_convert_to_m3u(UBTV_URL, UBTV_FILENAME)
+        download_and_convert_to_m3u(7708_URL, 7708_FILENAME)
 
         # 將文件移動到 source 目錄
         move_to_source_dir(TW_FILENAME)
         move_to_source_dir(UBTV_FILENAME)
+        move_to_source_dir(7708_FILENAME)
 
         # 更新 README.md
         update_readme()
