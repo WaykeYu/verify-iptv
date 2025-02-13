@@ -3,6 +3,7 @@ import os
 import subprocess
 import logging
 from typing import List
+from datetime import datetime
 
 # 設定變數
 TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_allsource"
@@ -11,6 +12,7 @@ TW_FILENAME = "TW_allsource.txt"
 UBTV_FILENAME = "UBTV.txt"
 GITHUB_REPO_DIR = "/path/to/local/github/repo"  # 替換為你的本地 GitHub 倉庫路徑
 SOURCE_DIR = os.path.join(GITHUB_REPO_DIR, "source")  # 文件存儲到 source 目錄
+README_FILE = os.path.join(SOURCE_DIR, "README.md")  # README 文件路徑
 
 # 配置日誌
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s")
@@ -40,6 +42,21 @@ def move_to_source_dir(filename: str) -> None:
         logger.error(f"移動文件失敗: {e}")
         exit(1)
 
+# 更新 README.md 文件
+def update_readme() -> None:
+    try:
+        update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(README_FILE, "w", encoding="utf-8") as file:
+            file.write(f"# 源文件更新記錄\n\n")
+            file.write(f"最後更新時間: `{update_time}`\n\n")
+            file.write(f"## 文件列表\n")
+            file.write(f"- `{TW_FILENAME}`\n")
+            file.write(f"- `{UBTV_FILENAME}`\n")
+        logger.info(f"README.md 已更新！")
+    except Exception as e:
+        logger.error(f"更新 README.md 失敗: {e}")
+        exit(1)
+
 # Git 操作
 def git_commit_and_push() -> None:
     logger.info("提交並推送變更到 GitHub...")
@@ -53,7 +70,7 @@ def git_commit_and_push() -> None:
 
         # Git 提交與推送
         subprocess.run(["git", "add", "source"], check=True)
-        subprocess.run(["git", "commit", "-m", "自動更新源文件"], check=True)
+        subprocess.run(["git", "commit", "-m", "自動更新源文件及 README"], check=True)
         subprocess.run(["git", "push"], check=True)
         logger.info("推送完成！")
     except subprocess.CalledProcessError as e:
@@ -70,6 +87,9 @@ def main() -> None:
         # 將文件移動到 source 目錄
         move_to_source_dir(TW_FILENAME)
         move_to_source_dir(UBTV_FILENAME)
+
+        # 更新 README.md
+        update_readme()
 
         # Git 操作
         git_commit_and_push()
