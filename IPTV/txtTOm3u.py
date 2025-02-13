@@ -7,8 +7,8 @@ from datetime import datetime
 # 設定變數
 TW_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/TW_allsource"
 UBTV_URL = "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV"
-TW_FILENAME = "TW_allsource.txt"
-UBTV_FILENAME = "UBTV.txt"
+TW_FILENAME = "TW_allsource.m3u"  # 副檔名改為 .m3u
+UBTV_FILENAME = "UBTV.m3u"  # 副檔名改為 .m3u
 GITHUB_REPO_DIR = "/home/runner/work/verify-iptv/verify-iptv"  # GitHub Actions 的工作目錄
 SOURCE_DIR = os.path.join(GITHUB_REPO_DIR, "source")  # 文件存儲到 source 目錄
 README_FILE = os.path.join(SOURCE_DIR, "README.md")  # README 文件路徑
@@ -17,17 +17,27 @@ README_FILE = os.path.join(SOURCE_DIR, "README.md")  # README 文件路徑
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-# 下載檔案
-def download_file(url: str, filename: str) -> None:
+# 下載檔案並轉換為 M3U 格式
+def download_and_convert_to_m3u(url: str, filename: str) -> None:
     logger.info(f"正在下載 {url} ...")
     try:
         response = requests.get(url)
         response.raise_for_status()  # 檢查 HTTP 狀態碼
+
+        # 轉換為 M3U 格式
         with open(filename, "w", encoding="utf-8") as file:
-            file.write(response.text)
-        logger.info(f"{filename} 下載完成！")
+            file.write("#EXTM3U\n")  # M3U 文件頭
+            for line in response.text.splitlines():
+                parts = line.strip().split(",")
+                if len(parts) == 2:
+                    name, url = parts
+                    file.write(f"#EXTINF:-1,{name}\n{url}\n")
+        logger.info(f"{filename} 下載並轉換完成！")
     except requests.exceptions.RequestException as e:
         logger.error(f"下載 {filename} 失敗: {e}")
+        exit(1)
+    except Exception as e:
+        logger.error(f"轉換 {filename} 失敗: {e}")
         exit(1)
 
 # 將文件移動到 GitHub 倉庫的 source 目錄
@@ -81,9 +91,9 @@ def git_commit_and_push() -> None:
 # 執行流程
 def main() -> None:
     try:
-        # 下載文件
-        download_file(TW_URL, TW_FILENAME)
-        download_file(UBTV_URL, UBTV_FILENAME)
+        # 下載並轉換文件
+        download_and_convert_to_m3u(TW_URL, TW_FILENAME)
+        download_and_convert_to_m3u(UBTV_URL, UBTV_FILENAME)
 
         # 將文件移動到 source 目錄
         move_to_source_dir(TW_FILENAME)
