@@ -49,43 +49,45 @@ def download_file(file_path):
         print(f"下載失敗: {file_path}")
         return None
 
-def parse_m3u(m3u_path):
-    """解析 .m3u 檔案，分類後存回與下載檔案相同的目錄"""
-    txt_path = m3u_path.replace(".m3u", ".txt")  # 轉換副檔名為 .txt
+def parse_m3u_files(m3u_files):
+    """解析所有 .m3u 檔案，分類頻道並合併轉換為 txt 格式"""
+    merged_channels_by_category = {}  # 用來儲存合併的分類頻道
 
-    with open(m3u_path, "r", encoding="utf-8") as m3u_file:
-        lines = m3u_file.readlines()
+    for m3u_path in m3u_files:
+        with open(m3u_path, "r", encoding="utf-8") as m3u_file:
+            lines = m3u_file.readlines()
 
-    channels_by_category = {}  # 字典儲存不同分類的頻道
-    current_category = "未分類"  # 預設分類
-    channel_name = None  # 暫存頻道名稱
+        current_category = "未分類"
+        channel_name = None
 
-    for line in lines:
-        line = line.strip()
-        if line.startswith("#EXTINF"):
-            # 使用正則表達式提取 group-title 和頻道名稱
-            match = re.search(r'group-title="([^"]*)".*,(.*)', line)
-            if match:
-                current_category = match.group(1).strip() or "未分類"
-                channel_name = match.group(2).strip()
-            else:
-                channel_name = line.split(",")[-1].strip()  # 若無 group-title，僅取頻道名稱
-        elif line and not line.startswith("#"):
-            # 這一行應該是播放連結
-            if channel_name:
-                # 加入分類字典
-                if current_category not in channels_by_category:
-                    channels_by_category[current_category] = []
-                channels_by_category[current_category].append(f"{channel_name} - {line}")
-                channel_name = None  # 重置頻道名稱
+        for line in lines:
+            line = line.strip()
+            if line.startswith("#EXTINF"):
+                # 使用正則表達式提取 group-title 和頻道名稱
+                match = re.search(r'group-title="([^"]*)".*,(.*)', line)
+                if match:
+                    current_category = match.group(1).strip() or "未分類"
+                    channel_name = match.group(2).strip()
+                else:
+                    channel_name = line.split(",")[-1].strip()  # 若無 group-title，僅取頻道名稱
+            elif line and not line.startswith("#"):
+                # 這一行應該是播放連結
+                if channel_name:
+                    if current_category not in merged_channels_by_category:
+                        merged_channels_by_category[current_category] = []
+                    merged_channels_by_category[current_category].append(f"{channel_name} - {line}")
+                    channel_name = None  # 重置頻道名稱
 
-    # 將所有分類存回下載的目錄
-    with open(txt_path, "w", encoding="utf-8") as txt_file:
-        for category, channel_list in sorted(channels_by_category.items()):
+    return merged_channels_by_category
+
+def save_merged_txt(merged_channels_by_category, save_path):
+    """將分類後的頻道存入合併後的 .txt"""
+    with open(save_path, "w", encoding="utf-8") as txt_file:
+        for category, channel_list in sorted(merged_channels_by_category.items()):
             txt_file.write(f"# {category}\n")
             txt_file.write("\n".join(channel_list) + "\n\n")
 
-    print(f"分類儲存: {txt_path}")
+    print(f"合併分類儲存: {save_path}")
 
 def main():
     m3u_files = get_m3u_links()
@@ -94,10 +96,19 @@ def main():
         print("沒有找到 .m3u 檔案")
         return
 
+    downloaded_files = []
     for file_path in m3u_files:
         m3u_path = download_file(file_path)
         if m3u_path:
-            parse_m3u(m3u_path)
+            downloaded_files.append(m3u_path)
+
+    if downloaded_files:
+        # 解析並合併所有 .m3u
+        merged_data = parse_m3u_files(downloaded_files)
+        
+        # 存回原路徑
+        merged_txt_path = os.path.join(BASE_SAVE_DIR, "merged_channels.txt")
+        save_merged_txt(merged_data, merged_txt_path)
 
 if __name__ == "__main__":
     main()
