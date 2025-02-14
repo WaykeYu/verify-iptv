@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 GITHUB_URL = "https://github.com/WaykeYu/verify-iptv/tree/main"
 RAW_URL_PREFIX = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/"
 
-# 設定儲存資料夾
-SAVE_DIR = "downloaded_m3u"
+# 設定下載根目錄
+BASE_SAVE_DIR = "downloaded_m3u"
 
 # 建立儲存資料夾（如果不存在）
-os.makedirs(SAVE_DIR, exist_ok=True)
+os.makedirs(BASE_SAVE_DIR, exist_ok=True)
 
 def get_m3u_links():
-    """取得 GitHub 上所有 .m3u 檔案的下載連結"""
+    """取得 GitHub 上所有 .m3u 檔案的下載連結，並保留其相對路徑"""
     response = requests.get(GITHUB_URL)
     if response.status_code != 200:
         print("無法存取 GitHub 頁面")
@@ -24,29 +24,32 @@ def get_m3u_links():
 
     m3u_files = []
     for link in links:
-        file_name = link.text
-        if file_name.endswith(".m3u"):
-            m3u_files.append(file_name)
+        file_path = link.text  # 取得檔案名稱或路徑
+        if file_path.endswith(".m3u"):
+            m3u_files.append(file_path)
     
     return m3u_files
 
-def download_file(file_name):
-    """下載指定的 .m3u 檔案"""
-    raw_url = RAW_URL_PREFIX + file_name
-    response = requests.get(raw_url)
+def download_file(file_path):
+    """下載指定的 .m3u 檔案，並保留 GitHub 上的目錄結構"""
+    raw_url = RAW_URL_PREFIX + file_path
+    local_path = os.path.join(BASE_SAVE_DIR, file_path)
 
+    # 確保目錄存在
+    os.makedirs(os.path.dirname(local_path), exist_ok=True)
+
+    response = requests.get(raw_url)
     if response.status_code == 200:
-        file_path = os.path.join(SAVE_DIR, file_name)
-        with open(file_path, "wb") as f:
+        with open(local_path, "wb") as f:
             f.write(response.content)
-        print(f"下載成功: {file_name}")
-        return file_path
+        print(f"下載成功: {file_path}")
+        return local_path
     else:
-        print(f"下載失敗: {file_name}")
+        print(f"下載失敗: {file_path}")
         return None
 
 def parse_m3u(m3u_path):
-    """解析 .m3u 檔案並轉換為 '頻道名稱 - 播放連結' 格式"""
+    """解析 .m3u 檔案並轉換為 '頻道名稱 - 播放連結' 格式，儲存於相同目錄"""
     txt_path = m3u_path.replace(".m3u", ".txt")
 
     with open(m3u_path, "r", encoding="utf-8") as m3u_file:
@@ -82,8 +85,8 @@ def main():
         print("沒有找到 .m3u 檔案")
         return
 
-    for file_name in m3u_files:
-        m3u_path = download_file(file_name)
+    for file_path in m3u_files:
+        m3u_path = download_file(file_path)
         if m3u_path:
             parse_m3u(m3u_path)
 
