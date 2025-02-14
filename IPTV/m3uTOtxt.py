@@ -8,8 +8,12 @@ def get_all_m3u_files(base_url):
         response = requests.get(base_url)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
-        m3u_files = [a['href'] for a in soup.find_all('a', href=True) if a['href'].endswith('.m3u')]
-        return [base_url + file for file in m3u_files]
+        m3u_files = []
+        for a in soup.find_all('a', href=True):
+            href = a['href']
+            if href.endswith('.m3u') and 'blob' in href:
+                m3u_files.append("https://raw.githubusercontent.com" + href.replace('/blob', ''))
+        return m3u_files
     except requests.exceptions.RequestException as e:
         print(f"獲取 .m3u 文件列表失敗: {e}")
         return []
@@ -63,7 +67,7 @@ def save_channels_by_category(categories):
             print(f"保存 {filename} 失敗: {e}")
 
 def main():
-    base_url = "https://github.com/WaykeYu/verify-iptv/"
+    base_url = "https://github.com/WaykeYu/verify-iptv"
     m3u_files = get_all_m3u_files(base_url)
 
     for url in m3u_files:
