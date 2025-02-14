@@ -1,44 +1,70 @@
 import os
-import re
 import requests
+import re
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
-def convert_m3u_to_txt(directory):
-    """
-    將指定目錄下的所有 .m3u 檔案轉換為 .txt 檔案。
-    
-    :param directory: 要處理的目錄路徑
-    """
-    # 檢查目錄是否存在
-    if not os.path.exists(directory):
-        print(f"錯誤：目錄 '{directory}' 不存在。")
-        return
+# 下载文件的URL
+url = "https://github.com/WaykeYu/verify-iptv/blob/main/Adult.m3u"
 
-    # 遍歷指定目錄下的所有檔案
-    for filename in os.listdir(directory):
-        # 檢查檔案是否為 .m3u 檔案
-        if filename.endswith(".m3u"):
-            m3u_file_path = os.path.join(directory, filename)
-            txt_file_path = os.path.join(directory, filename.replace(".m3u", ".txt"))
-            
-            try:
-                # 讀取 .m3u 檔案內容
-                with open(m3u_file_path, 'r', encoding='utf-8') as m3u_file:
-                    content = m3u_file.read()
-                
-                # 將內容寫入 .txt 檔案
-                with open(txt_file_path, 'w', encoding='utf-8') as txt_file:
-                    txt_file.write(content)
-                
-                print(f"已轉換：{m3u_file_path} -> {txt_file_path}")
-            
-            except Exception as e:
-                print(f"處理檔案 {m3u_file_path} 時發生錯誤：{e}")
+# 本地保存路径
+local_path = "Adult.m3u"
 
-if __name__ == "__main__":
-    # 指定要處理的目錄（例如 GitHub 倉庫中的 'main' 目錄）
-    target_directory = "main"
-    
-    # 呼叫函式進行轉換
-    convert_m3u_to_txt(target_directory)
+# 下载文件
+response = requests.get(url)
+if response.status_code == 200:
+    with open(local_path, 'wb') as file:
+        file.write(response.content)
+    print(f"文件已下载到: {local_path}")
+else:
+    print(f"无法下载文件，状态码: {response.status_code}")
+    exit()
+
+# 解析.m3u文件
+def parse_m3u(file_path):
+    channels = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+        channel = {}
+        for line in lines:
+            line = line.strip()
+            if line.startswith("#EXTINF:"):
+                # 解析频道信息
+                info = re.search(r'#EXTINF:-1,(.*)', line)
+                if info:
+                    channel['name'] = info.group(1)
+            elif line.startswith("http"):
+                # 解析频道URL
+                channel['url'] = line
+                channels.append(channel)
+                channel = {}
+    return channels
+
+# 分类频道
+def classify_channels(channels):
+    categories = {}
+    for channel in channels:
+        name = channel['name']
+        category = name.split(' ')[0]  # 假设分类是频道名称的第一个词
+        if category not in categories:
+            categories[category] = []
+        categories[category].append(channel)
+    return categories
+
+# 合并频道为txt文件
+def merge_channels(categories, output_path):
+    with open(output_path, 'w', encoding='utf-8') as file:
+        for category, channels in categories.items():
+            file.write(f"# {category}\n")
+            for channel in channels:
+                file.write(f"{channel['name']}\n{channel['url']}\n")
+            file.write("\n")
+
+# 解析并分类
+channels = parse_m3u(local_path)
+categories = classify_channels(channels)
+
+# 合并并保存为txt文件
+output_path = os.path.join(os.path.dirname(local_path), "Adult.txt")
+merge_channels(categories, output_path)
+print(f"频道已分类并保存到: {output_path}")
