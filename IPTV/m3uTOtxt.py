@@ -6,9 +6,12 @@ from collections import defaultdict
 url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/gat.m3u"
 
 # 下载文件
-response = requests.get(url)
-if response.status_code != 200:
-    raise Exception(f"Failed to download file: {response.status_code}")
+try:
+    response = requests.get(url)
+    response.raise_for_status()  # 如果状态码不是200，抛出异常
+except requests.exceptions.HTTPError as e:
+    print(f"无法下载文件: {e}")
+    exit(1)
 
 # 解析.m3u文件内容
 lines = response.text.splitlines()
