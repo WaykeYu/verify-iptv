@@ -5,7 +5,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 
 # 下载文件的URL
-url = "https://github.com/WaykeYu/verify-iptv/blob/main/Adult.m3u"
+url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/Adult.m3u"  # 使用raw URL
 
 # 本地保存路径
 local_path = "Adult.m3u"
@@ -37,32 +37,36 @@ def parse_m3u(file_path):
                 # 解析频道URL
                 channel['url'] = line
                 channels.append(channel)
-                channel = {}
+                channel = {}  # 重置频道信息
     return channels
 
 # 分类频道
-def classify_channels(channels):
+def classify_channels(channels, category_key='name'):
     categories = {}
     for channel in channels:
-        name = channel['name']
-        category = name.split(' ')[0]  # 假设分类是频道名称的第一个词
+        # 默认按频道名称的第一个词分类
+        if category_key == 'name':
+            category = channel['name'].split(' ')[0]  # 假设分类是频道名称的第一个词
+        else:
+            category = '未分类'  # 默认分类
         if category not in categories:
             categories[category] = []
         categories[category].append(channel)
     return categories
 
-# 合并频道为txt文件
+# 合并频道为txt文件（每个频道一行）
 def merge_channels(categories, output_path):
     with open(output_path, 'w', encoding='utf-8') as file:
         for category, channels in categories.items():
-            file.write(f"# {category}\n")
+            file.write(f"# {category}\n")  # 写入分类标题
             for channel in channels:
-                file.write(f"{channel['name']}\n{channel['url']}\n")
-            file.write("\n")
+                # 每个频道一行，格式：频道名称,频道URL
+                file.write(f"{channel['name']},{channel['url']}\n")
+            file.write("\n")  # 分类之间留空行
 
 # 解析并分类
 channels = parse_m3u(local_path)
-categories = classify_channels(channels)
+categories = classify_channels(channels, category_key='name')  # 按名称分类
 
 # 合并并保存为txt文件
 output_path = os.path.join(os.path.dirname(local_path), "Adult.txt")
