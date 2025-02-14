@@ -1,0 +1,6 @@
+=== tvg-id="TDMMacauSatellite.mo" tvg-logo="https ===
+tvg-id="TDMMacauSatellite.mo" tvg-logo="https://i.imgur.com/iIfZsD6.png" group-title="General",Ou-Mun Macau Satellite Ch. 96 (720p), https://live3.tdm.com.mo/ch3/ch3.live/playlist.m3u8
+
+=== tvg-id="TDMMacauSatellite.mo" tvg-logo="https ===
+tvg-id="TDMMacauSatellite.mo" tvg-logo="https://i.imgur.com/iIfZsD6.png" group-title="General",Ou-Mun Macau Satellite Ch. 96 (720p), https://live3.tdm.com.mo/ch3/ch3.live/playlist.m3u8
+

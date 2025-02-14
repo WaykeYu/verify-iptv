@@ -1,0 +1,6 @@
+=== tvg-id="QTV3.cn" tvg-logo="https ===
+tvg-id="QTV3.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv3.jpg" group-title="Movies",QTV-3, http://video10.qtv.com.cn/drm/qtv3at/manifest.m3u8
+
+=== tvg-id="QTV3.cn" tvg-logo="https ===
+tvg-id="QTV3.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv3.jpg" group-title="Movies",QTV-3, http://video10.qtv.com.cn/drm/qtv3at/manifest.m3u8
+

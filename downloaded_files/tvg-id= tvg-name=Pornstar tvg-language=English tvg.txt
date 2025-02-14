@@ -1,0 +1,16 @@
+=== tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Pornstar, http://cdn.adultiptv.net/pornstar.m3u8
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Pornstar, http://live.adultiptv.net/pornstar.m3u8
+
+=== tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Pornstar, http://cdn.adultiptv.net/pornstar.m3u8
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Pornstar, http://live.adultiptv.net/pornstar.m3u8
+
+=== tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Pornstar, http://live.adultiptv.net/pornstar.m3u8
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Pornstar, http://cdn.adultiptv.net/pornstar.m3u8
+
+=== tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Pornstar, http://live.adultiptv.net/pornstar.m3u8
+tvg-id="" tvg-name="Pornstar" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Pornstar, http://cdn.adultiptv.net/pornstar.m3u8
+

@@ -1,0 +1,6 @@
+=== tvg-id="WeihaiOceanChannel.cn" tvg-logo="https ===
+tvg-id="WeihaiOceanChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/weihaihaiyang.jpg" group-title="Lifestyle",Weihai Ocean Channel, http://l2.weihai.tv:8081/hls/x8b19NoyEG.m3u8
+
+=== tvg-id="WeihaiOceanChannel.cn" tvg-logo="https ===
+tvg-id="WeihaiOceanChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/weihaihaiyang.jpg" group-title="Lifestyle",Weihai Ocean Channel, http://l2.weihai.tv:8081/hls/x8b19NoyEG.m3u8
+

@@ -1,0 +1,14 @@
+=== group-title="港澳台",民视新闻 HD, http ===
+group-title="港澳台",民视新闻 HD, http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/chunklist1.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
+
+=== group-title="港澳台",民视新闻 HD, http ===
+group-title="港澳台",民视新闻 HD, http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/chunklist1.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
+group-title="港澳台",民视新闻 HD, http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
+

@@ -1,0 +1,6 @@
+=== tvg-id="YanbianSatelliteTV.cn" tvg-logo="https ===
+tvg-id="YanbianSatelliteTV.cn" tvg-logo="https://i.imgur.com/UKKsnhD.png" group-title="Undefined",延边卫视 (720p), http://live.ybtvyun.com/video/s10016-7e5f23de35df/index.m3u8
+
+=== tvg-id="YanbianSatelliteTV.cn" tvg-logo="https ===
+tvg-id="YanbianSatelliteTV.cn" tvg-logo="https://i.imgur.com/UKKsnhD.png" group-title="Undefined",延边卫视 (720p), http://live.ybtvyun.com/video/s10016-7e5f23de35df/index.m3u8
+

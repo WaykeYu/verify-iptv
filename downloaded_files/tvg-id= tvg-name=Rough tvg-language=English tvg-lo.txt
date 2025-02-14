@@ -1,0 +1,16 @@
+=== tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Rough, http://live.adultiptv.net/rough.m3u8
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Rough, http://cdn.adultiptv.net/rough.m3u8
+
+=== tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Rough, http://live.adultiptv.net/rough.m3u8
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Rough, http://cdn.adultiptv.net/rough.m3u8
+
+=== tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Rough, http://cdn.adultiptv.net/rough.m3u8
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Rough, http://live.adultiptv.net/rough.m3u8
+
+=== tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https ===
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="成人频道",Rough, http://cdn.adultiptv.net/rough.m3u8
+tvg-id="" tvg-name="Rough" tvg-language="English" tvg-logo="https://files.adultiptv.net/adultiptvnet.jpg" group-title="Adult",Rough, http://live.adultiptv.net/rough.m3u8
+

@@ -1,0 +1,10 @@
+=== group-title="港澳台",時尚台FTV, http ===
+group-title="港澳台",時尚台FTV, http://80.94.54.42/fashiontv/stream/playlist.m3u8
+group-title="港澳台",時尚台FTV, http://lb.streaming.sk/fashiontv/stream/chunklist_w1702070444.m3u8
+group-title="港澳台",時尚台FTV, http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
+
+=== group-title="港澳台",時尚台FTV, http ===
+group-title="港澳台",時尚台FTV, http://80.94.54.42/fashiontv/stream/playlist.m3u8
+group-title="港澳台",時尚台FTV, http://lb.streaming.sk/fashiontv/stream/chunklist_w1702070444.m3u8
+group-title="港澳台",時尚台FTV, http://lb.streaming.sk/fashiontv/stream/chunklist.m3u8
+

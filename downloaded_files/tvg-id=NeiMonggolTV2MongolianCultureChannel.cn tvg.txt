@@ -1,0 +1,6 @@
+=== tvg-id="NeiMonggolTV2MongolianCultureChannel.cn" tvg-logo="https ===
+tvg-id="NeiMonggolTV2MongolianCultureChannel.cn" tvg-logo="https://i.imgur.com/kpsjahG.png" group-title="Culture",Nei Monggol TV 2 Mongolian Culture Channel, http://1.183.141.194:8001/hls/54/index.m3u8
+
+=== tvg-id="NeiMonggolTV2MongolianCultureChannel.cn" tvg-logo="https ===
+tvg-id="NeiMonggolTV2MongolianCultureChannel.cn" tvg-logo="https://i.imgur.com/kpsjahG.png" group-title="Culture",Nei Monggol TV 2 Mongolian Culture Channel, http://1.183.141.194:8001/hls/54/index.m3u8
+

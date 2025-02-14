@@ -1,0 +1,6 @@
+=== tvg-id="CGTN.cn" tvg-logo="https ===
+tvg-id="CGTN.cn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/512px-CGTN.svg.png" group-title="News",CGTN (1080p), https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
+
+=== tvg-id="CGTN.cn" tvg-logo="https ===
+tvg-id="CGTN.cn" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CGTN.svg/512px-CGTN.svg.png" group-title="News",CGTN (1080p), https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
+

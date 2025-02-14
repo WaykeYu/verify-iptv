@@ -1,0 +1,6 @@
+=== tvg-id="ZhejiangInternationalChannel.cn" tvg-logo="https ===
+tvg-id="ZhejiangInternationalChannel.cn" tvg-logo="https://i.imgur.com/XOL1Hph.png" group-title="Undefined",Zhejiang TV International, https://ali-m-l.cztv.com/channels/lantian/channel10/1080p.m3u8
+
+=== tvg-id="ZhejiangInternationalChannel.cn" tvg-logo="https ===
+tvg-id="ZhejiangInternationalChannel.cn" tvg-logo="https://i.imgur.com/XOL1Hph.png" group-title="Undefined",Zhejiang TV International, https://ali-m-l.cztv.com/channels/lantian/channel10/1080p.m3u8
+

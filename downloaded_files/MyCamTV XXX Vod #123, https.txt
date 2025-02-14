@@ -1,0 +1,10 @@
+=== MyCamTV XXX Vod #123, https ===
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/123.m3u8
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/1231.m3u8
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/12311.m3u8
+
+=== MyCamTV XXX Vod #123, https ===
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/123.m3u8
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/1231.m3u8
+MyCamTV XXX Vod #123, https://vod.mycamtv.net/12311.m3u8
+

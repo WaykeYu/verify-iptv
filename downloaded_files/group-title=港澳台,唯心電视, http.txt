@@ -1,0 +1,8 @@
+=== group-title="港澳台",唯心電视, http ===
+group-title="港澳台",唯心電视, http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8
+group-title="港澳台",唯心電视, http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
+
+=== group-title="港澳台",唯心電视, http ===
+group-title="港澳台",唯心電视, http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8
+group-title="港澳台",唯心電视, http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
+

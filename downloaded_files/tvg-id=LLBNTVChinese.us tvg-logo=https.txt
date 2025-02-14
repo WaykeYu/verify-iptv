@@ -1,0 +1,6 @@
+=== tvg-id="LLBNTVChinese.us" tvg-logo="https ===
+tvg-id="LLBNTVChinese.us" tvg-logo="https://i.imgur.com/C0jUDMn.png" group-title="Religious",Lighting Lives Blessing Nations TV Chinese (LLBN) (480p), https://brightstar-chinese-pull-secure.akamaized.net/brightstarchinese/stream.m3u8
+
+=== tvg-id="LLBNTVChinese.us" tvg-logo="https ===
+tvg-id="LLBNTVChinese.us" tvg-logo="https://i.imgur.com/C0jUDMn.png" group-title="Religious",Lighting Lives Blessing Nations TV Chinese (LLBN) (480p), https://brightstar-chinese-pull-secure.akamaized.net/brightstarchinese/stream.m3u8
+

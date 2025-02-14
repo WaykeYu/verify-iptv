@@ -1,0 +1,6 @@
+=== tvg-id="YanbianCineseComprehensiveChannel.cn" tvg-logo="https ===
+tvg-id="YanbianCineseComprehensiveChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/ybtv2.jpg" group-title="General",Yanbian Cinese Comprehensive Channel, https://live.ybtvyun.com/video/s10016-6d4fe23a90b3/index.m3u8
+
+=== tvg-id="YanbianCineseComprehensiveChannel.cn" tvg-logo="https ===
+tvg-id="YanbianCineseComprehensiveChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/ybtv2.jpg" group-title="General",Yanbian Cinese Comprehensive Channel, https://live.ybtvyun.com/video/s10016-6d4fe23a90b3/index.m3u8
+

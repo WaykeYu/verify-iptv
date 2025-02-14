@@ -1,0 +1,12 @@
+=== tvg-id="GoodTV.tw" tvg-logo="https ===
+tvg-id="GoodTV.tw" tvg-logo="https://i.imgur.com/k28Kc3o.png" group-title="Religious",GOOD TV CH1 綜合台 (720p) [Not 24/7], https://live.streamingfast.net/osmflivech1.m3u8
+
+=== tvg-id="GoodTV.tw" tvg-logo="https ===
+tvg-id="GoodTV.tw" tvg-logo="https://i.imgur.com/k28Kc3o.png" group-title="Religious",GOOD TV CH1 綜合台 (720p) [Not 24/7], https://live.streamingfast.net/osmflivech1.m3u8
+
+=== tvg-id="GoodTV.tw" tvg-logo="https ===
+tvg-id="GoodTV.tw" tvg-logo="https://i.imgur.com/k28Kc3o.png" group-title="Religious",GOOD TV CH1 綜合台 (720p) [Not 24/7], https://live.streamingfast.net/osmflivech1.m3u8
+
+=== tvg-id="GoodTV.tw" tvg-logo="https ===
+tvg-id="GoodTV.tw" tvg-logo="https://i.imgur.com/k28Kc3o.png" group-title="Religious",GOOD TV CH1 綜合台 (720p) [Not 24/7], https://live.streamingfast.net/osmflivech1.m3u8
+
