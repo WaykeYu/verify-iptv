@@ -1,6 +1,5 @@
 import os
 import requests
-import re
 from bs4 import BeautifulSoup
 
 def get_all_m3u_files(base_url):
@@ -13,74 +12,37 @@ def get_all_m3u_files(base_url):
             href = a['href']
             if href.endswith('.m3u') and 'blob' in href:
                 raw_url = href.replace('/blob/', '/raw/')
-                m3u_files.append("https://github.com" + raw_url)
+                m3u_files.append(("https://github.com" + raw_url, href))
         return m3u_files
     except requests.exceptions.RequestException as e:
         print(f"獲取 .m3u 文件列表失敗: {e}")
         return []
 
-def download_file(url, local_path):
+def download_and_convert(url, original_path):
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         content = response.content.decode('utf-8')
         if not content.strip():
             print(f"{url} 文件內容為空")
-        with open(local_path, 'w', encoding='utf-8') as file:
-            file.write(content)
-        print(f"文件已下載到: {local_path}")
+            return
+
+        txt_content = content.replace(".m3u", ".txt")
+        new_path = original_path.replace(".m3u", ".txt")
+
+        with open(new_path, 'w', encoding='utf-8') as file:
+            file.write(txt_content)
+        print(f"已將 {original_path} 轉換並保存為 {new_path}")
+
     except requests.exceptions.RequestException as e:
-        print(f"下載文件失敗: {e}")
-
-def parse_m3u(file_path):
-    channels = []
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            channel = {}
-            for line in file:
-                line = line.strip()
-                if line.startswith("#EXTINF:"):
-                    info = re.search(r'#EXTINF:-?\\d+,\\s*(.*)', line)
-                    if info:
-                        channel['name'] = info.group(1)
-                elif line.startswith("http"):
-                    channel['url'] = line
-                    if 'name' in channel and 'url' in channel:
-                        channels.append(channel)
-                        channel = {}
-    except Exception as e:
-        print(f"解析文件失敗: {e}")
-    return channels
-
-def classify_channels(channels):
-    categories = {}
-    for channel in channels:
-        category = channel['name'].split()[0] if channel['name'] else '未分類'
-        categories.setdefault(category, []).append(channel)
-    return categories
-
-def save_channels_by_category(categories):
-    for category, channels in categories.items():
-        filename = f"{category}.txt"
-        try:
-            with open(filename, 'w', encoding='utf-8') as file:
-                for channel in channels:
-                    file.write(f"{channel['name']} - {channel['url']}\\n")
-            print(f"{filename} 已儲存，共 {len(channels)} 頻道")
-        except Exception as e:
-            print(f"保存 {filename} 失敗: {e}")
+        print(f"下載或轉換文件失敗: {e}")
 
 def main():
     base_url = "https://github.com/WaykeYu/verify-iptv"
     m3u_files = get_all_m3u_files(base_url)
 
-    for url in m3u_files:
-        local_path = os.path.basename(url)
-        download_file(url, local_path)
-        channels = parse_m3u(local_path)
-        print(f"{local_path}: 共解析到 {len(channels)} 個頻道")
-        categories = classify_channels(channels)
-        save_channels_by_category(categories)
+    for url, original_path in m3u_files:
+        download_and_convert(url, original_path)
 
 if __name__ == "__main__":
     main()
