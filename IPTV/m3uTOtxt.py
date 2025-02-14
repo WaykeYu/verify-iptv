@@ -1,6 +1,7 @@
 import os
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def get_all_m3u_files(base_url):
     try:
@@ -19,6 +20,16 @@ def get_all_m3u_files(base_url):
         print(f"獲取 .m3u 文件列表失敗: {e}")
         return []
 
+def parse_m3u(content):
+    channels = []
+    lines = content.splitlines()
+    for i, line in enumerate(lines):
+        if line.startswith("#EXTINF:"):
+            match = re.search(r'#EXTINF:-1,(.*)', line)
+            if match and i + 1 < len(lines) and lines[i + 1].startswith("http"):
+                channels.append(f"{match.group(1)} - {lines[i + 1]}")
+    return channels
+
 def download_and_convert(url, file_name):
     try:
         response = requests.get(url, timeout=10)
@@ -28,11 +39,13 @@ def download_and_convert(url, file_name):
             print(f"{url} 文件內容為空")
             return
 
+        channels = parse_m3u(content)
         txt_path = file_name.replace(".m3u", ".txt")
 
         with open(txt_path, 'w', encoding='utf-8') as file:
-            file.write(content)
-        print(f"已將 {file_name} 轉換並保存為 {txt_path}")
+            for channel in channels:
+                file.write(channel + "\n")
+        print(f"已將 {file_name} 解析並轉換為 {txt_path}")
 
     except requests.exceptions.RequestException as e:
         print(f"下載或轉換文件失敗: {e}")
