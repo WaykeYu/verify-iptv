@@ -1,6 +1,18 @@
 import os
 import requests
 import re
+from bs4 import BeautifulSoup
+
+def get_all_m3u_files(base_url):
+    try:
+        response = requests.get(base_url)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, 'html.parser')
+        m3u_files = [a['href'] for a in soup.find_all('a', href=True) if a['href'].endswith('.m3u')]
+        return [base_url + file for file in m3u_files]
+    except requests.exceptions.RequestException as e:
+        print(f"獲取 .m3u 文件列表失敗: {e}")
+        return []
 
 def download_file(url, local_path):
     try:
@@ -51,17 +63,14 @@ def save_channels_by_category(categories):
             print(f"保存 {filename} 失敗: {e}")
 
 def main():
-    base_url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/"
-    file_list = ["Adult.m3u", "Sports.m3u", "Movies.m3u", "News.m3u"]  # 可使用網頁解析獲取所有檔案
+    base_url = "https://github.com/WaykeYu/verify-iptv/"
+    m3u_files = get_all_m3u_files(base_url)
 
-    for m3u_file in file_list:
-        url = base_url + m3u_file
-        local_path = m3u_file
-
+    for url in m3u_files:
+        local_path = os.path.basename(url)
         download_file(url, local_path)
         channels = parse_m3u(local_path)
-        print(f"{m3u_file}: 共解析到 {len(channels)} 個頻道")
-
+        print(f"{local_path}: 共解析到 {len(channels)} 個頻道")
         categories = classify_channels(channels)
         save_channels_by_category(categories)
 
