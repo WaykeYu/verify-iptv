@@ -45,18 +45,32 @@ def download_file(file_name):
         print(f"下載失敗: {file_name}")
         return None
 
-def convert_m3u_to_txt(m3u_path):
-    """轉換 .m3u 檔案為 .txt 格式，並存回同目錄"""
+def parse_m3u(m3u_path):
+    """解析 .m3u 檔案並轉換為 '頻道名稱 - 播放連結' 格式"""
     txt_path = m3u_path.replace(".m3u", ".txt")
 
     with open(m3u_path, "r", encoding="utf-8") as m3u_file:
         lines = m3u_file.readlines()
 
-    # 過濾出有效的播放連結（排除註解行）
+    channel_list = []
+    channel_name = None  # 用來暫存當前頻道名稱
+
+    for line in lines:
+        line = line.strip()
+        if line.startswith("#EXTINF"):
+            # 解析頻道名稱
+            parts = line.split(",")  # EXTINF 的最後一部分是頻道名稱
+            if len(parts) > 1:
+                channel_name = parts[-1]  # 取最後的頻道名稱
+        elif line and not line.startswith("#"):
+            # 這一行應該是播放連結
+            if channel_name:
+                channel_list.append(f"{channel_name} - {line}")
+                channel_name = None  # 重置頻道名稱，等待下一組資料
+
+    # 寫入轉換後的 .txt 檔案
     with open(txt_path, "w", encoding="utf-8") as txt_file:
-        for line in lines:
-            if not line.startswith("#") and line.strip():
-                txt_file.write(line)
+        txt_file.write("\n".join(channel_list))
 
     print(f"轉換成功: {txt_path}")
     return txt_path
@@ -71,7 +85,7 @@ def main():
     for file_name in m3u_files:
         m3u_path = download_file(file_name)
         if m3u_path:
-            convert_m3u_to_txt(m3u_path)
+            parse_m3u(m3u_path)
 
 if __name__ == "__main__":
     main()
