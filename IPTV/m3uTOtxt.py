@@ -14,7 +14,7 @@ BASE_SAVE_DIR = "downloaded_m3u"
 os.makedirs(BASE_SAVE_DIR, exist_ok=True)
 
 def get_m3u_links():
-    """取得 GitHub 上所有 .m3u 檔案的下載連結"""
+    """取得 GitHub 上所有 .m3u 檔案的下載連結，保留其相對路徑"""
     response = requests.get(GITHUB_URL)
     if response.status_code != 200:
         print("無法存取 GitHub 頁面")
@@ -32,7 +32,7 @@ def get_m3u_links():
     return m3u_files
 
 def download_file(file_path):
-    """下載指定的 .m3u 檔案"""
+    """下載指定的 .m3u 檔案，並保留 GitHub 上的目錄結構"""
     raw_url = RAW_URL_PREFIX + file_path
     local_path = os.path.join(BASE_SAVE_DIR, file_path)
 
@@ -50,7 +50,7 @@ def download_file(file_path):
         return None
 
 def parse_m3u(m3u_path):
-    """解析 .m3u 檔案，分類後存回與原檔名相同的 .txt"""
+    """解析 .m3u 檔案，分類後存回與原檔名相同的 .txt，保留原始路徑"""
     txt_path = m3u_path.replace(".m3u", ".txt")
 
     with open(m3u_path, "r", encoding="utf-8") as m3u_file:
@@ -77,4 +77,27 @@ def parse_m3u(m3u_path):
                 if current_category not in channels_by_category:
                     channels_by_category[current_category] = []
                 channels_by_category[current_category].append(f"{channel_name} - {line}")
-        
+                channel_name = None  # 重置頻道名稱
+
+    # 將所有分類存回相同檔案
+    with open(txt_path, "w", encoding="utf-8") as txt_file:
+        for category, channel_list in sorted(channels_by_category.items()):
+            txt_file.write(f"# {category}\n")
+            txt_file.write("\n".join(channel_list) + "\n\n")
+
+    print(f"分類儲存: {txt_path}")
+
+def main():
+    m3u_files = get_m3u_links()
+
+    if not m3u_files:
+        print("沒有找到 .m3u 檔案")
+        return
+
+    for file_path in m3u_files:
+        m3u_path = download_file(file_path)
+        if m3u_path:
+            parse_m3u(m3u_path)
+
+if __name__ == "__main__":
+    main()
