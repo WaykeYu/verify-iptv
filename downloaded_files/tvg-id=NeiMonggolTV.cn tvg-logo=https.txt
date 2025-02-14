@@ -1,6 +1,0 @@
-=== tvg-id="NeiMonggolTV.cn" tvg-logo="https ===
-tvg-id="NeiMonggolTV.cn" tvg-logo="https://i.imgur.com/WeugJBE.png" group-title="Undefined",Nei Monggol TV, http://1.183.141.194:8001/hls/55/index.m3u8
-
-=== tvg-id="NeiMonggolTV.cn" tvg-logo="https ===
-tvg-id="NeiMonggolTV.cn" tvg-logo="https://i.imgur.com/WeugJBE.png" group-title="Undefined",Nei Monggol TV, http://1.183.141.194:8001/hls/55/index.m3u8
-

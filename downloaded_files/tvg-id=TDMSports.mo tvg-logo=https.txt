@@ -1,6 +1,0 @@
-=== tvg-id="TDMSports.mo" tvg-logo="https ===
-tvg-id="TDMSports.mo" tvg-logo="https://i.imgur.com/AsWLf8S.png" group-title="Sports",TDM Sports Ch. 93 (720p), https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8
-
-=== tvg-id="TDMSports.mo" tvg-logo="https ===
-tvg-id="TDMSports.mo" tvg-logo="https://i.imgur.com/AsWLf8S.png" group-title="Sports",TDM Sports Ch. 93 (720p), https://live3.tdm.com.mo/ch4/sport_ch4.live/playlist.m3u8
-

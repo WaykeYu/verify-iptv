@@ -1,6 +1,0 @@
-=== tvg-id="MetroGlobeNetwork.id" tvg-logo="https ===
-tvg-id="MetroGlobeNetwork.id" tvg-logo="https://i.imgur.com/aiiinzg.png" group-title="News",Metro Globe Network (1080p) [Not 24/7], https://edge.medcom.id/live-edge/smil:mgnch.smil/playlist.m3u8
-
-=== tvg-id="MetroGlobeNetwork.id" tvg-logo="https ===
-tvg-id="MetroGlobeNetwork.id" tvg-logo="https://i.imgur.com/aiiinzg.png" group-title="News",Metro Globe Network (1080p) [Not 24/7], https://edge.medcom.id/live-edge/smil:mgnch.smil/playlist.m3u8
-

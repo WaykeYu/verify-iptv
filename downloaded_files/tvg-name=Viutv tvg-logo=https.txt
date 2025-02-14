@@ -1,6 +1,0 @@
-=== tvg-name="Viutv" tvg-logo="https ===
-tvg-name="Viutv" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/Viutv.png" group-title="🌊港·澳·台",Viutv, https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
-
-=== tvg-name="Viutv" tvg-logo="https ===
-tvg-name="Viutv" tvg-logo="https://raw.githubusercontent.com/fanmingming/live/main/tv/Viutv.png" group-title="🌊港·澳·台",Viutv, https://turkmedya-live.ercdn.net/tv360/tv360.m3u8
-

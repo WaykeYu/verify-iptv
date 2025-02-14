@@ -1,6 +1,0 @@
-=== tvg-id="GlobalNews.tw" tvg-logo="https ===
-tvg-id="GlobalNews.tw" tvg-logo="https://i.imgur.com/Q1Mrvjj.png" group-title="News",Global News (1080p), https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV02.m3u8
-
-=== tvg-id="GlobalNews.tw" tvg-logo="https ===
-tvg-id="GlobalNews.tw" tvg-logo="https://i.imgur.com/Q1Mrvjj.png" group-title="News",Global News (1080p), https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV02.m3u8
-

@@ -1,6 +1,0 @@
-=== tvg-id="WeihaiPublicChannel.cn" tvg-logo="https ===
-tvg-id="WeihaiPublicChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/weihaitv2.jpg" group-title="General",Weihai Public Channel, http://l2.weihai.tv:8081/hls/g16E3482eM.m3u8
-
-=== tvg-id="WeihaiPublicChannel.cn" tvg-logo="https ===
-tvg-id="WeihaiPublicChannel.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/weihaitv2.jpg" group-title="General",Weihai Public Channel, http://l2.weihai.tv:8081/hls/g16E3482eM.m3u8
-

@@ -1,6 +1,0 @@
-=== group-title="港澳台",原住民族电视台, https ===
-group-title="港澳台",原住民族电视台, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV35.m3u8
-
-=== group-title="港澳台",原住民族电视台, https ===
-group-title="港澳台",原住民族电视台, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV35.m3u8
-

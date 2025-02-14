@@ -1,6 +1,0 @@
-=== tvg-id="DaAi2.tw" tvg-logo="https ===
-tvg-id="DaAi2.tw" tvg-logo="https://i.imgur.com/KdJi9af.png" group-title="General",DaAi2 (大愛2) (720p), https://pulltv2.wanfudaluye.com/live/tv2.m3u8
-
-=== tvg-id="DaAi2.tw" tvg-logo="https ===
-tvg-id="DaAi2.tw" tvg-logo="https://i.imgur.com/KdJi9af.png" group-title="General",DaAi2 (大愛2) (720p), https://pulltv2.wanfudaluye.com/live/tv2.m3u8
-

@@ -1,6 +1,0 @@
-=== group-title="港澳台",华视综合娱乐, https ===
-group-title="港澳台",华视综合娱乐, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV12.m3u8
-
-=== group-title="港澳台",华视综合娱乐, https ===
-group-title="港澳台",华视综合娱乐, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV12.m3u8
-

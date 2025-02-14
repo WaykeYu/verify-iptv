@@ -1,6 +1,0 @@
-=== tvg-id="ChuzhouPublicChannel.cn" tvg-logo="https ===
-tvg-id="ChuzhouPublicChannel.cn" tvg-logo="https://i.imgur.com/9JfZJRv.png" group-title="General",滁州市广播电视台 公共频道 (400p), http://live.cztv.cc:85/live/ggpd.m3u8
-
-=== tvg-id="ChuzhouPublicChannel.cn" tvg-logo="https ===
-tvg-id="ChuzhouPublicChannel.cn" tvg-logo="https://i.imgur.com/9JfZJRv.png" group-title="General",滁州市广播电视台 公共频道 (400p), http://live.cztv.cc:85/live/ggpd.m3u8
-

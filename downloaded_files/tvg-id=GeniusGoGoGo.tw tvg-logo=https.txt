@@ -1,6 +1,0 @@
-=== tvg-id="GeniusGoGoGo.tw" tvg-logo="https ===
-tvg-id="GeniusGoGoGo.tw" tvg-logo="https://i.imgur.com/GGdnGqH.png" group-title="Entertainment",天才衝衝衝 (1080p), https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV26.m3u8
-
-=== tvg-id="GeniusGoGoGo.tw" tvg-logo="https ===
-tvg-id="GeniusGoGoGo.tw" tvg-logo="https://i.imgur.com/GGdnGqH.png" group-title="Entertainment",天才衝衝衝 (1080p), https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV26.m3u8
-

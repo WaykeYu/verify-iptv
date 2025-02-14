@@ -1,6 +1,0 @@
-=== tvg-id="QTV6.cn" tvg-logo="https ===
-tvg-id="QTV6.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv6.jpg" group-title="Kids;Lifestyle",QTV-6, http://video10.qtv.com.cn/drm/qtv6at/manifest.m3u8
-
-=== tvg-id="QTV6.cn" tvg-logo="https ===
-tvg-id="QTV6.cn" tvg-logo="https://www.tvchinese.net/uploads/tv/qdtv6.jpg" group-title="Kids;Lifestyle",QTV-6, http://video10.qtv.com.cn/drm/qtv6at/manifest.m3u8
-

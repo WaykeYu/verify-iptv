@@ -1,6 +1,0 @@
-=== group-title="港澳台",EF运通, https ===
-group-title="港澳台",EF运通, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV06.m3u8
-
-=== group-title="港澳台",EF运通, https ===
-group-title="港澳台",EF运通, https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV06.m3u8
-

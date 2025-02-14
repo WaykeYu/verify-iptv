@@ -1,6 +1,0 @@
-=== tvg-id="ABNChina.us" tvg-logo="https ===
-tvg-id="ABNChina.us" tvg-logo="https://i.imgur.com/zagVLQH.png" group-title="Religious",ABN China (720p), https://mediaserver.abnvideos.com/streams/abnchina.m3u8
-
-=== tvg-id="ABNChina.us" tvg-logo="https ===
-tvg-id="ABNChina.us" tvg-logo="https://i.imgur.com/zagVLQH.png" group-title="Religious",ABN China (720p), https://mediaserver.abnvideos.com/streams/abnchina.m3u8
-
