@@ -1,14 +1,20 @@
-
+import re
 import os
+import re
 import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
-import re
-
 
 # GitHub路徑
 base_url = "https://github.com/WaykeYu/verify-iptv/tree/main"
 raw_base_url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/"
+
+# 清理檔案名稱中的非法字符
+def clean_filename(filename):
+    # 移除非法字符
+    cleaned = re.sub(r'[\\/*?:"<>|]', '', filename)
+    # 限制檔案名稱長度
+    return cleaned[:50]  # 限制為 50 個字符
 
 # 獲取頁面內容
 response = requests.get(base_url)
@@ -60,10 +66,12 @@ for m3u_file in m3u_files:
 
     # 將分類後的頻道存儲到各自的檔案中
     for category, channels in categories.items():
-        category_filename = f"{category}.txt"
+        # 清理分類名稱以確保檔案名稱合法
+        cleaned_category = clean_filename(category)
+        category_filename = f"{cleaned_category}.txt"
         category_path = os.path.join(local_dir, category_filename)
         with open(category_path, 'a', encoding='utf-8') as f:  # 使用 'a' 模式追加內容
             f.write(f"=== {category} ===\n")
             f.write("\n".join(channels) + "\n\n")
 
-    print(f"已分類並存儲: {category_path}")
+        print(f"已分類並存儲: {category_path}")
