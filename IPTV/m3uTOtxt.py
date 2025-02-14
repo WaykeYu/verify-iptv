@@ -14,7 +14,7 @@ BASE_SAVE_DIR = "downloaded_m3u"
 os.makedirs(BASE_SAVE_DIR, exist_ok=True)
 
 def get_m3u_links():
-    """取得 GitHub 上所有 .m3u 檔案的下載連結，保留其相對路徑"""
+    """取得 GitHub 上所有 .m3u 檔案的下載連結"""
     response = requests.get(GITHUB_URL)
     if response.status_code != 200:
         print("無法存取 GitHub 頁面")
@@ -50,8 +50,8 @@ def download_file(file_path):
         return None
 
 def parse_m3u(m3u_path):
-    """解析 .m3u 檔案，分類後存回與原檔名相同的 .txt，保留原始路徑"""
-    txt_path = m3u_path.replace(".m3u", ".txt")
+    """解析 .m3u 檔案，分類後存回與下載檔案相同的目錄"""
+    txt_path = m3u_path.replace(".m3u", ".txt")  # 轉換副檔名為 .txt
 
     with open(m3u_path, "r", encoding="utf-8") as m3u_file:
         lines = m3u_file.readlines()
@@ -79,7 +79,7 @@ def parse_m3u(m3u_path):
                 channels_by_category[current_category].append(f"{channel_name} - {line}")
                 channel_name = None  # 重置頻道名稱
 
-    # 將所有分類存回相同檔案
+    # 將所有分類存回下載的目錄
     with open(txt_path, "w", encoding="utf-8") as txt_file:
         for category, channel_list in sorted(channels_by_category.items()):
             txt_file.write(f"# {category}\n")
