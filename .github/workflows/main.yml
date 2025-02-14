@@ -26,23 +26,23 @@ jobs:
           pip install --upgrade pip
           pip install selenium requests futures eventlet opencv-python Beautifulsoup4 translate termcolor func_timeout replace input opencc pypinyin pytz tqdm
                 
-      #- name: Run iptv
-        #run: python ${{ github.workspace }}/IPTV/txtTOm3u.py
+      - name: Run iptv
+        run: python ${{ github.workspace }}/IPTV/txtTOm3u.py
     
-      #- name: Run iptv
-        #run: python ${{ github.workspace }}/IPTV/V4检测优选.py
+      - name: Run iptv
+        run: python ${{ github.workspace }}/IPTV/V4检测优选.py
           
-      #- name: Run iptv  
-        #run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
-        
-      #- name: Run iptv  
-        #run: python ${{ github.workspace }}/IPTV/gat頻道過濾.py
-       
-      #- name: Run iptv  
-        #run: python ${{ github.workspace }}/IPTV/adult頻道過濾.py
+      - name: Run iptv  
+        run: python ${{ github.workspace }}/IPTV/zho頻道過濾.py
         
       - name: Run iptv  
-        run: python ${{ github.workspace }}/IPTV/m3uTOtxt.py
+        run: python ${{ github.workspace }}/IPTV/gat頻道過濾.py
+       
+      - name: Run iptv  
+        run: python ${{ github.workspace }}/IPTV/adult頻道過濾.py
+        
+      #- name: Run iptv  
+        #run: python ${{ github.workspace }}/IPTV/m3uTOtxt.py
         
       # readme.md
       - name: Get current date
