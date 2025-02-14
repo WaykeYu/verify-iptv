@@ -5,6 +5,7 @@ from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import re
 
+
 # GitHub路徑
 base_url = "https://github.com/WaykeYu/verify-iptv/tree/main"
 raw_base_url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/"
@@ -20,28 +21,49 @@ for link in soup.find_all('a', href=True):
     if href.endswith('.m3u'):
         m3u_files.append(href.split('/')[-1])
 
-# 下載並解析每個.m3u檔案
-all_channels = []
+# 創建本地目錄來存儲檔案
+local_dir = "downloaded_files"
+os.makedirs(local_dir, exist_ok=True)
+
+# 下載、解析並轉換每個.m3u檔案
 for m3u_file in m3u_files:
     # 下載.m3u檔案
     m3u_url = urljoin(raw_base_url, m3u_file)
     response = requests.get(m3u_url)
     m3u_content = response.text
 
-    # 解析.m3u檔案
+    # 解析.m3u檔案並轉換為.txt格式
     channels = m3u_content.splitlines()
+    txt_content = []
     for i in range(0, len(channels), 2):
-        if i+1 < len(channels):
+        if i + 1 < len(channels):
             channel_name = channels[i].strip('#EXTINF:-1,').strip()
-            channel_url = channels[i+1].strip()
-            all_channels.append(f"{channel_name}, {channel_url}")
+            channel_url = channels[i + 1].strip()
+            txt_content.append(f"{channel_name}, {channel_url}")
 
-# 將所有頻道合併並轉換為.txt格式
-output_content = "\n".join(all_channels)
+    # 將內容寫入.txt檔案（改名為.txt）
+    txt_filename = os.path.splitext(m3u_file)[0] + ".txt"
+    txt_path = os.path.join(local_dir, txt_filename)
+    with open(txt_path, 'w', encoding='utf-8') as f:
+        f.write("\n".join(txt_content))
 
-# 將內容寫入.txt檔案
-output_filename = "merged_channels.txt"
-with open(output_filename, 'w', encoding='utf-8') as f:
-    f.write(output_content)
+    print(f"已轉換並存儲: {txt_path}")
 
-print(f"所有頻道已合併並存儲為 {output_filename}")
+    # 對當前.txt檔案進行頻道分類
+    categories = {}
+    for channel in txt_content:
+        # 假設頻道名稱的第一部分是分類（例如 "電影:頻道1"）
+        category = channel.split(':')[0].strip()
+        if category not in categories:
+            categories[category] = []
+        categories[category].append(channel)
+
+    # 將分類後的頻道存儲到各自的檔案中
+    for category, channels in categories.items():
+        category_filename = f"{category}.txt"
+        category_path = os.path.join(local_dir, category_filename)
+        with open(category_path, 'a', encoding='utf-8') as f:  # 使用 'a' 模式追加內容
+            f.write(f"=== {category} ===\n")
+            f.write("\n".join(channels) + "\n\n")
+
+    print(f"已分類並存儲: {category_path}")
