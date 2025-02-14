@@ -3,7 +3,6 @@ import requests
 import re
 
 def download_file(url, local_path):
-    """下載並保存 .m3u 文件到本地"""
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
@@ -12,10 +11,8 @@ def download_file(url, local_path):
         print(f"文件已下載到: {local_path}")
     except requests.exceptions.RequestException as e:
         print(f"下載文件失敗: {e}")
-        exit()
 
 def parse_m3u(file_path):
-    """解析 .m3u 文件並提取頻道名稱和URL"""
     channels = []
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -23,7 +20,7 @@ def parse_m3u(file_path):
             for line in file:
                 line = line.strip()
                 if line.startswith("#EXTINF:"):
-                    info = re.search(r'#EXTINF:-?\d+,\s*(.*)', line)
+                    info = re.search(r'#EXTINF:-?\\d+,\\s*(.*)', line)
                     if info:
                         channel['name'] = info.group(1)
                 elif line.startswith("http"):
@@ -36,7 +33,6 @@ def parse_m3u(file_path):
     return channels
 
 def classify_channels(channels):
-    """根據頻道名稱的首個詞分類頻道"""
     categories = {}
     for channel in channels:
         category = channel['name'].split()[0] if channel['name'] else '未分類'
@@ -44,27 +40,30 @@ def classify_channels(channels):
     return categories
 
 def save_channels_by_category(categories):
-    """將分類後的頻道保存為不同的文件"""
     for category, channels in categories.items():
         filename = f"{category}.txt"
         try:
             with open(filename, 'w', encoding='utf-8') as file:
                 for channel in channels:
-                    file.write(f"{channel['name']} - {channel['url']}\n")
+                    file.write(f"{channel['name']} - {channel['url']}\\n")
             print(f"{filename} 已儲存，共 {len(channels)} 頻道")
         except Exception as e:
             print(f"保存 {filename} 失敗: {e}")
 
 def main():
-    url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/Adult.m3u"
-    local_path = "Adult.m3u"
+    base_url = "https://raw.githubusercontent.com/WaykeYu/verify-iptv/main/"
+    file_list = ["Adult.m3u", "Sports.m3u", "Movies.m3u", "News.m3u"]  # 可使用網頁解析獲取所有檔案
 
-    download_file(url, local_path)
-    channels = parse_m3u(local_path)
-    print(f"共解析到 {len(channels)} 個頻道")
+    for m3u_file in file_list:
+        url = base_url + m3u_file
+        local_path = m3u_file
 
-    categories = classify_channels(channels)
-    save_channels_by_category(categories)
+        download_file(url, local_path)
+        channels = parse_m3u(local_path)
+        print(f"{m3u_file}: 共解析到 {len(channels)} 個頻道")
+
+        categories = classify_channels(channels)
+        save_channels_by_category(categories)
 
 if __name__ == "__main__":
     main()
