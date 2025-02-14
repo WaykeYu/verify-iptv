@@ -12,7 +12,8 @@ def get_all_m3u_files(base_url):
         for a in soup.find_all('a', href=True):
             href = a['href']
             if href.endswith('.m3u') and 'blob' in href:
-                m3u_files.append("https://raw.githubusercontent.com" + href.replace('/blob', ''))
+                raw_url = href.replace('/blob/', '/raw/')
+                m3u_files.append("https://github.com" + raw_url)
         return m3u_files
     except requests.exceptions.RequestException as e:
         print(f"獲取 .m3u 文件列表失敗: {e}")
@@ -22,8 +23,11 @@ def download_file(url, local_path):
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
-        with open(local_path, 'wb') as file:
-            file.write(response.content)
+        content = response.content.decode('utf-8')
+        if not content.strip():
+            print(f"{url} 文件內容為空")
+        with open(local_path, 'w', encoding='utf-8') as file:
+            file.write(content)
         print(f"文件已下載到: {local_path}")
     except requests.exceptions.RequestException as e:
         print(f"下載文件失敗: {e}")
