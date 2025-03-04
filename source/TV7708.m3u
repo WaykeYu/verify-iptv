@@ -35,8 +35,6 @@ https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV02.m3u8
 https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV01.m3u8
 #EXTINF:-1,三立NEWS+
 https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
-#EXTINF:-1,華視新聞
-https://epg.pw/stream/2ef08642072574008f65939021951a59fe9fc71369c751393f40a1b2234e18c9.m3u8
 #EXTINF:-1,華視新聞資訊
 https://epg.pw/stream/b20d2989c1b4d83ae0b5972a00648b724ae245f21c9542eca7bb8c32a0043a24.ctv
 #EXTINF:-1,HBO影院
@@ -68,19 +66,15 @@ https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV18.m3u8
 #EXTINF:-1,緯來日本台
 rtmp://f13h.mine.nu/sat/tv771
 #EXTINF:-1,緯來日本台
-https://epg.pw/stream/e59654d34f566d9fd92a4f8c7c7ea2fb82bddd9fe7d74b3766608312d0780e32.m3u8
-#EXTINF:-1,緯來日本台
-https://epg.pw/stream/3cd74587ba1c238ff02161b0be00701c89ca3a01ab27f78e3439a6a4acaebb9c.m3u8
-#EXTINF:-1,緯來日本台
-https://epg.pw/stream/f5227925360e3b273c0a865db138abcac0fdffd9c6a0b9b75dca3e120a2f432a.m3u8
+rtmp://f13h.mine.nu:1935/sat/tv771
 #EXTINF:-1,緯來綜合台
-https://epg.pw/stream/7d501b1e8c12e47b411505569ebcb16eb120d36ae42c0c44630c3b9828420d82.m3u8
-#EXTINF:-1,緯來綜合台
-https://epg.pw/stream/3c3bb8bead49158d9674091094bdb6b099b1f5eeb9ff93c9c9c27cd5ca4c8c9c.m3u8
+http://23.26.239.95:3599/xsj.php?id=videoland
+#EXTINF:-1,緯來精采台
+http://61.221.215.25:8800/hls/48/index.m3u8
 #EXTINF:-1,緯來育樂台
-https://epg.pw/stream/2a732300753dd501a544b41d3ed7a272642a8b4f251c1131636d36644ad3fbd0.m3u8
+rtmp://f13h.mine.nu:1935/sat/tv701
 #EXTINF:-1,緯來育樂台
-https://epg.pw/stream/3791deb30b7bba8c51c4492c66e4533fb786249b546387ca93e2a8a044689529.m3u8
+rtmp://f13h.mine.nu/sat/tv701
 #EXTINF:-1,靖天日本台
 https://epg.pw/stream/a0139192e3443869304e1c3e3c3d24699e3673ba7f37e40524356affc6bfecb0.m3u8
 #EXTINF:-1,靖天日本台
@@ -565,6 +559,8 @@ http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
 http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
 #EXTINF:-1,ZooMoo-AKtv
 http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
+#EXTINF:-1,中華小當家
+http://61.221.215.25:8800/hls/40/index.m3u8
 #EXTINF:-1,🌍人文地理
 #genre#
 #EXTINF:-1,动物世界
@@ -654,7 +650,7 @@ https://stream1.freetv.fun/smithsonian-1.ctv
 #EXTINF:-1,緯來體育
 rtmp://f13h.mine.nu/sat/tv721
 #EXTINF:-1,緯來體育
-rtmp://f13h.mine.nu/sat/tv721
+rtmp://f13h.mine.nu:1935/sat/tv721
 #EXTINF:-1,緯來體育
 rtmp://f13h.mine.nu/sat/tv721
 #EXTINF:-1,J-SPORTS 1 
@@ -671,13 +667,13 @@ https://stream1.freetv.fun/dazn-portugues-1.ctv
 https://stream1.freetv.fun/dazn2-1.m3u8
 #EXTINF:-1,DAZN 2(TW)
 https://stream1.freetv.fun/dazn-ringside-1.m3u8
-#EXTINF:-1,ELEVEN Sports1
+#EXTINF:-1,Eleven Sports1
 rtmp://f13h.mine.nu/sat/tv731
 #EXTINF:-1,Eleven Sports1
 https://stream1.freetv.fun/eleven-sports-1-pl-1.ctv
 #EXTINF:-1,Eleven Sports1
 https://stream1.freetv.fun/eleven-sports-1-1.ctv
-#EXTINF:-1,ELEVEN Sports2
+#EXTINF:-1,Eleven Sports2
 rtmp://f13h.mine.nu/sat/tv741
 #EXTINF:-1,Eleven Sports2
 https://stream1.freetv.fun/eleven-sports-2-pl-1.ctv
