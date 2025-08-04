@@ -11,8 +11,6 @@ http://38.64.72.148/hls/modn/list/4013/chunklist1.m3u8
 http://38.64.72.148/hls/modn/list/4013/playlist.m3u8
 #EXTINF:-1,台視新聞 HD
 http://38.64.72.148:80/hls/modn/list/4013/chunklist0.m3u8?blog.ntnas.top
-#EXTINF:-1,TVBS新聞台
-http://61.221.215.25:8800/hls/9/index.m3u8
 #EXTINF:-1,民視新聞 HD
 http://38.64.72.148:80/hls/modn/list/4012/chunklist1.m3u8
 #EXTINF:-1,民視新聞 HD
@@ -21,46 +19,38 @@ http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
 http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
 #EXTINF:-1,民視新聞 HD
 http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
-#EXTINF:-1,中視新聞 HD
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV09.m3u8
-#EXTINF:-1,鏡新聞Mnews
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV70.m3u8
-#EXTINF:-1,東森衛視
+#EXTINF:-1,東森新聞
+http://s1.an94tv.cfd/zhongtian/CH-1/AKTV.m3u8
+#EXTINF:-1,東森新聞美洲台
 http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
-#EXTINF:-1,東森財經 HD
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV03.m3u8
-#EXTINF:-1,寰宇新聞
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV02.m3u8
-#EXTINF:-1,三立INEWS
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV01.m3u8
-#EXTINF:-1,三立NEWS+
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV32.m3u8
+#EXTINF:-1,TVBS新聞台
+https://smart.pendy.dpdns.org/Smart.php?id=tvbs_n
+#EXTINF:-1,TVBS新聞台
+http://198.16.100.186:8278/tvbs_n/playlist.m3u8?tid=MA4A2233260122332601&ct=19249&tsum=513a9dcb42fa8b98e1792d513dd3e2ee
+#EXTINF:-1,TVBS新聞台
+http://s1.an94tv.cfd/taiwan/tvbs-1/AKTV.m3u8
+#EXTINF:-1,TVBS亞洲台
+http://198.16.100.186:8278/tvbs/playlist.m3u8?tid=MEFE3093330530933305&ct=19249&tsum=ce6b5e9293b3618104ad53084745a223
+#EXTINF:-1,中視 HD
+https://smart.pendy.dpdns.org/Smart.php?id=zhongshihd_twn
+#EXTINF:-1,中天新聞台
+https://smart.pendy.dpdns.org/Smart.php?id=ctinews
+#EXTINF:-1,中天新聞台
+https://haoyunlai.serv00.net/Smartv-1.php?id=ctinews
+#EXTINF:-1,非凡新聞
+http://198.16.100.186:8278/feifannews_twn/playlist.m3u8?tid=m050e7aad65f614336734&ct=17874&tsum=4ea1b829d195ac69a6c2ca51b21ae378
 #EXTINF:-1,HBO影院
 http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
 #EXTINF:-1,🎭台灣綜合頻道
 #genre#
-#EXTINF:-1,華視CTS
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV12.m3u8
-#EXTINF:-1,華視CTS
-https://epg.pw/stream/2ef08642072574008f65939021951a59fe9fc71369c751393f40a1b2234e18c9.m3u8
-#EXTINF:-1,中視
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV42.m3u8
 #EXTINF:-1,民視 HD
 http://220.134.196.147:9574/ch49.m3u8
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/playlist.m3u8
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
-#EXTINF:-1,東森超視34.5
-http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
-#EXTINF:-1,東森綜合 HD
-http://220.134.196.147:9553/index.m3u8
-#EXTINF:-1,東森購物2
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV19.m3u8
-#EXTINF:-1,東森購物3
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV18.m3u8
+#EXTINF:-1,HBO影院
+http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
+#EXTINF:-1,華視 HD
+https://k44991.kylintv.tv/live/ctshd_iphone.m3u8
+#EXTINF:-1,華視 HD
+http://198.16.100.186:8278/ctshd_twn/playlist.m3u8?tid=MC3C3582911835829118&ct=19249&tsum=f2c0c86801d43be647206c4ddb8e9ce6
 #EXTINF:-1,緯來日本台
 rtmp://f13h.mine.nu/sat/tv771
 #EXTINF:-1,緯來日本台
@@ -79,12 +69,20 @@ https://epg.pw/stream/a0139192e3443869304e1c3e3c3d24699e3673ba7f37e40524356affc6
 https://epg.pw/stream/e5484f7f83c1ae2a81987ca8749cee125d994c8d6eb5f251d6cd9a7d60fb792d.m3u8
 #EXTINF:-1,靖天日本台
 https://epg.pw/stream/a0329e8161481d34004df71a5564d22f0a144482f3faed8ec5663dd8fa764d80.m3u8
-#EXTINF:-1,靖天綜合台
-https://epg.pw/stream/fd6a2d196572e67cb8d49f16bcd9602af8b7408cd4e1e6a9e4ae988e80481df7.m3u8
-#EXTINF:-1,靖天綜合台
-https://epg.pw/stream/96c74468a1956de7057a0d9f07d7809a7cd3c9be2f5ba56a23c3e0255e2be250.ctv
-#EXTINF:-1,華視-天才衝衝衝
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV26.m3u8
+#EXTINF:-1,三立戲劇
+http://61.221.215.25:8800/hls/41/index.m3u8
+#EXTINF:-1,三立台灣台
+http://198.16.100.186:8278/sanlitaiwan/playlist.m3u8?tid=m92ccadc4dc3718157816&ct=17874&tsum=3570a8198ca0fb7ebb803807e38b33fb
+#EXTINF:-1,TVBS亞洲
+http://38.64.72.148:80/hls/modn/list/4005/playlist.m3u8
+#EXTINF:-1,TVBS亞洲
+http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
+#EXTINF:-1,TVBS亞洲
+http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+#EXTINF:-1,東森超視34.5
+http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
+#EXTINF:-1,東森綜合 HD
+http://220.134.196.147:9553/index.m3u8
 #EXTINF:-1,臺灣番薯台
 http://61.216.67.119:1935/TWHG/E1/chunklist_w70581102.m3u8
 #EXTINF:-1,臺灣番薯台
@@ -117,20 +115,8 @@ http://live.streamingfast.net/osmflivech11.m3u8
 http://live.streamingfast.net/osmflivech13.m3u8
 #EXTINF:-1,GOOD TV 美食旅遊台
 http://live.streamingfast.net/osmflivech14.m3u8
-#EXTINF:-1,🎞️台灣戲劇頻道
-#genre#
-#EXTINF:-1,三立戲劇
-http://61.221.215.25:8800/hls/41/index.m3u8
-#EXTINF:-1,八大戲劇HD
-http://61.221.215.25:8800/hls/39/index.m3u8
-#EXTINF:-1,民視影劇臺
-https://stream.freetv.fun/min-shi-ying-ju-1.ctv
-#EXTINF:-1,民視影劇臺
-https://stream.freetv.fun/min-shi-ying-ju-1.ctv
-#EXTINF:-1,龍華經典
-https://stream.freetv.fun/long-hua-jing-dian-1.ctv
-#EXTINF:-1,HBO影院
-http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
+#EXTINF:-1,豬哥會社
+https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1754329731/ei/I56QaPWFDcaU1d8P_Z-U6Aw/ip/114.26.201.215/id/v8MUGB4vst8.2/source/yt_live_broadcast/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/tx/51548072/txs/51548072%2C51548073%2C51548074%2C51548075%2C51548076%2C51548077/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/bui/AY1jyLPC5t_mEO5DlbyIv6q0CtvIfPD9OuaUcq9iHXpSa5PsCgkmys0sPt0fNjNDvnzlcc7clyP73Ibm/spc/l3OVKS2lSn5V18Bl2GupMSGfLGQJGJE4F7ybLoQagvaE2DaU9bfuAjyRvqL10RJKFT4/vprv/1/go/1/rqh/5/pacing/0/nvgoi/1/ncsapi/1/keepalive/yes/fexp/51355912/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Ctx%2Ctxs%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cbui%2Cspc%2Cvprv%2Cgo%2Crqh%2Citag%2Cplaylist_type/sig/AJfQdSswRQIhAKc5klwkJ8_ZIjinpA1MCJojefgiIkQlAFpv7BhsudzTAiAjl7A8I0Z4Bu8huIW00CKVSNybovSYRTv2lKmXD449cw%3D%3D/file/index.m3u8
 #EXTINF:-1,📷戲劇重播
 #genre#
 #EXTINF:-1,新天龍八部之天山童姥
@@ -397,14 +383,12 @@ http://43.138.170.29:35455/yy/1354926637
 http://epg.112114.xyz/douyu/9650849
 #EXTINF:-1,🧸動畫頻道
 #genre#
-#EXTINF:-1,東森幼幼歌曲輪播
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV63.m3u8
 #EXTINF:-1,GOOD卡通
 http://live.streamingfast.net/osmflivech45.m3u8
 #EXTINF:-1,GOOD卡通
 https://dqhxk7sbp7xog.cloudfront.net/osmflivech45.m3u8
-#EXTINF:-1,小豬佩奇
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV64.m3u8
+#EXTINF:-1,卡通輪播
+https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1754329544/ei/aJ2QaNGfDKyS1d8P7OKt2AY/ip/114.26.201.215/id/N6lNLi8AKI4.1/source/yt_live_broadcast/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/tx/51548072/txs/51548072%2C51548073%2C51548074%2C51548075%2C51548076%2C51548077/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/gcr/tw/bui/AY1jyLM8GRYpincQwqCYIp3YQWOPlvC5uXKO7uv20nd-75HzH_Cr9lileLHV6ZOP4Q-DUDxk8aoP6fuF/spc/l3OVKYqaLvW4A3VYTuCn7z2i2oIl4JmDR9liHG4hJ6E3lpjcCB6WWxj6W2DZko0vWaA/vprv/1/go/1/rqh/5/pacing/0/nvgoi/1/ncsapi/1/keepalive/yes/fexp/51355912/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Ctx%2Ctxs%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cgcr%2Cbui%2Cspc%2Cvprv%2Cgo%2Crqh%2Citag%2Cplaylist_type/sig/AJfQdSswRQIhANBII5PE43EgFjbATeoSCjuQDJtESN6QZCArfkORaxj3AiBuRiNGqO1iD2wQYuS0eppQGkpbV1PjN7_xjqdgfNX3Eg%3D%3D/file/index.m3u8
 #EXTINF:-1,哈哈炫動
 http://210.210.155.35/qwr9ew/s/s50/index.m3u8
 #EXTINF:-1,哈哈炫動
@@ -425,12 +409,6 @@ http://210.210.155.35/uq2663/h/h191/index.m3u8
 https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=36
 #EXTINF:-1,ZOOMOO
 https://zoomoo-samsungau.amagi.tv/playlist.m3u8
-#EXTINF:-1,親子動畫01
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV65.m3u8
-#EXTINF:-1,親子動畫02
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV66.m3u8
-#EXTINF:-1,英文兒歌動畫
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV68.m3u8
 #EXTINF:-1,Nick卡通AKtv
 http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
 #EXTINF:-1,AniMAX_AKtv
@@ -511,8 +489,6 @@ http://103.199.161.254/Content/bbcworld/Live/Channel(BBCworld)/Stream(02)/index.
 https://www.bloomberg.com/media-manifest/streams/asia.m3u8
 #EXTINF:-1,Bloomberg News
 http://218.32.47.179:8551/http/192.168.1.9:8078/hls/43/80/bloomber.m3u8
-#EXTINF:-1,Bloomberg News
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV44.m3u8
 #EXTINF:-1,Bloomberg TV Asia Live Event
 https://www.bloomberg.com/media-manifest/streams/asia-event.m3u8
 #EXTINF:-1,CBC News
@@ -529,36 +505,22 @@ http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3
 http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8?zshijd
 #EXTINF:-1,CNA亞洲新聞
 https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_5.m3u8
-#EXTINF:-1,CNA亞洲新聞
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV52.m3u8
 #EXTINF:-1,CNN
 https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8
 #EXTINF:-1,DW 德國之聲
 https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8
-#EXTINF:-1,DW 德國之聲
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV08.m3u8
-#EXTINF:-1,Euronews
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV37.m3u8
 #EXTINF:-1,FOX NEWS
 http://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8
 #EXTINF:-1,France 24
 http://static.france24.com:80/live/F24_FR_HI_HLS/live_tv.m3u8
 #EXTINF:-1,France 24
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV38.m3u8
-#EXTINF:-1,France 24
 https://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8
-#EXTINF:-1,GB News UK
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV33.m3u8
-#EXTINF:-1,HTB Hokkaido NEWS24
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV53.m3u8
 #EXTINF:-1,KBS WORLD
 https://kbsworld-ott.akamaized.net/hls/live/2002341/kbsworld/01.m3u8
 #EXTINF:-1,KBS WORLD
 https://kbsworld-ott.akamaized.net/hls/live/2002341/kbsworld/master.m3u8
 #EXTINF:-1,KBS WORLD
 https://kbsworld-ott.akamaized.net:443/hls/live/2002341/kbsworld/01.m3u8
-#EXTINF:-1,NBC NEWS
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV39.m3u8
 #EXTINF:-1,RT News
 https://rt-glb.rttv.com/live/rtnews/playlist.m3u8
 #EXTINF:-1,TBN Asia
@@ -613,10 +575,6 @@ https://epg.pw/stream/14256387a4019f342f90fb2e248e86362692b68d88e4cf9a6842fa659e
 https://epg.pw/stream/25175c7fccfbd6b9eb84da550d209558856d777a651e95a9eee156246c364050.m3u8
 #EXTINF:-1,國會頻道2
 https://epg.pw/stream/80b455104735b3ab7fa31625f949f7d9e9fbc0ef3b0f3fa14023d32922f5379d.m3u8
-#EXTINF:-1,國會議事轉播
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV56.m3u8
-#EXTINF:-1,國會議事轉播
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV57.m3u8
 #EXTINF:-1,立法院 直播內政委員會 (450p)
 https://lylive-videorent.cdn.hinet.net/out/u/live/gop4/ly/ly-Live7/hls-cl-tv/index.m3u8
 #EXTINF:-1,立法院 直播司法及法制委員會 (450p)
@@ -649,16 +607,10 @@ https://epg.pw/stream/3f1da41967f70b7fc0c80cce65f2a8c6d9c74b85eb97d39b0f3745b36b
 http://www.dalitv.com.tw:4568/live/dali/index.m3u8
 #EXTINF:-1,世新綜合
 http://61.58.60.230:9319/live/49.m3u8
-#EXTINF:-1,幸福空間居家台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV41.m3u8
 #EXTINF:-1,佛衛慈悲台
 http://btsw-ott2b.cdn.hinet.net/live_bts/btsw01/chunklist.m3u8?fbclid=IwAR0tOOH5nMOCvkCFTXbHgyO6P95nuOS3MNCfYDflXYkqsUVGfApmPOLWeR0
 #EXTINF:-1,孝廉
 http://cdn257.ccdntech.com/live-http/_definst_/vod257_Live/live/playlist.m3u8
-#EXTINF:-1,信大電視台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV07.m3u8
-#EXTINF:-1,信吉電視台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV58.m3u8
 #EXTINF:-1,香港佛陀
 http://js1.amtb.cn/liveedge/_definst_/livetv/chunklist.m3u8
 #EXTINF:-1,香港佛陀
@@ -667,16 +619,6 @@ https://js1.amtb.cn/liveedge/_definst_/livetv/playlist.m3u8
 http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/chunklist_w1177047531.m3u8
 #EXTINF:-1,唯心電視
 http://mobile.ccdntech.com/transcoder/_definst_/vod164_Live/live/playlist.m3u8
-#EXTINF:-1,👗電視購物頻道
-#genre#
-#EXTINF:-1,MOMO購物1台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV04.m3u8
-#EXTINF:-1,MOMO購物2台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV05.m3u8
-#EXTINF:-1,Viva 美好購物1台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV54.m3u8
-#EXTINF:-1,Viva 美好購物2台
-https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV55.m3u8
 #EXTINF:-1,成人點播頻道_3368
 #genre#
 #EXTINF:-1,母子愉悅亂倫-蘭心潔
