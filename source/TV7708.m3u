@@ -19,30 +19,28 @@ http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
 http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
 #EXTINF:-1,民視新聞 HD
 http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
-#EXTINF:-1,東森新聞
-http://s1.an94tv.cfd/zhongtian/CH-1/AKTV.m3u8
 #EXTINF:-1,東森新聞美洲台
 http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
 #EXTINF:-1,TVBS新聞台
-https://smart.pendy.dpdns.org/Smart.php?id=tvbs_n
+https://live.tvfix.org/live/tvbsnews/1/v4000000/index.m3u8
 #EXTINF:-1,TVBS新聞台
 http://198.16.100.186:8278/tvbs_n/playlist.m3u8?tid=MA4A2233260122332601&ct=19249&tsum=513a9dcb42fa8b98e1792d513dd3e2ee
-#EXTINF:-1,TVBS新聞台
-http://s1.an94tv.cfd/taiwan/tvbs-1/AKTV.m3u8
-#EXTINF:-1,TVBS亞洲台
-http://198.16.100.186:8278/tvbs/playlist.m3u8?tid=MEFE3093330530933305&ct=19249&tsum=ce6b5e9293b3618104ad53084745a223
 #EXTINF:-1,中視 HD
 https://smart.pendy.dpdns.org/Smart.php?id=zhongshihd_twn
 #EXTINF:-1,中天新聞台
-https://smart.pendy.dpdns.org/Smart.php?id=ctinews
+http://tlive24.uk/livehttpplay?channel_id=20163
 #EXTINF:-1,中天新聞台
-https://haoyunlai.serv00.net/Smartv-1.php?id=ctinews
+https://k44991.kylintv.tv/live/cti_iphone.m3u8
 #EXTINF:-1,非凡新聞
 http://198.16.100.186:8278/feifannews_twn/playlist.m3u8?tid=m050e7aad65f614336734&ct=17874&tsum=4ea1b829d195ac69a6c2ca51b21ae378
 #EXTINF:-1,HBO影院
 http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
 #EXTINF:-1,🎭台灣綜合頻道
 #genre#
+#EXTINF:-1,TVBS 亞洲台
+http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+#EXTINF:-1,TVBS 亞洲台
+http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
 #EXTINF:-1,民視 HD
 http://220.134.196.147:9574/ch49.m3u8
 #EXTINF:-1,HBO影院
@@ -73,12 +71,6 @@ https://epg.pw/stream/a0329e8161481d34004df71a5564d22f0a144482f3faed8ec5663dd8fa
 http://61.221.215.25:8800/hls/41/index.m3u8
 #EXTINF:-1,三立台灣台
 http://198.16.100.186:8278/sanlitaiwan/playlist.m3u8?tid=m92ccadc4dc3718157816&ct=17874&tsum=3570a8198ca0fb7ebb803807e38b33fb
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/playlist.m3u8
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/chunklist0.m3u8
-#EXTINF:-1,TVBS亞洲
-http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
 #EXTINF:-1,東森超視34.5
 http://38.64.72.148:80/hls/modn/list/2013/chunklist1.m3u8
 #EXTINF:-1,東森綜合 HD
