@@ -21,6 +21,10 @@ http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
 http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
 #EXTINF:-1,東森新聞美洲台
 http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
+#EXTINF:-1,TVBS 亞洲台
+http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
+#EXTINF:-1,TVBS 亞洲台
+http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
 #EXTINF:-1,TVBS新聞台
 https://live.tvfix.org/live/tvbsnews/1/v4000000/index.m3u8
 #EXTINF:-1,TVBS新聞台
@@ -37,10 +41,6 @@ http://198.16.100.186:8278/feifannews_twn/playlist.m3u8?tid=m050e7aad65f61433673
 http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
 #EXTINF:-1,🎭台灣綜合頻道
 #genre#
-#EXTINF:-1,TVBS 亞洲台
-http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
-#EXTINF:-1,TVBS 亞洲台
-http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
 #EXTINF:-1,民視 HD
 http://220.134.196.147:9574/ch49.m3u8
 #EXTINF:-1,HBO影院
