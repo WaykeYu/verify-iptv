@@ -26,9 +26,9 @@ http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
 #EXTINF:-1,TVBS 亞洲台
 http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
 #EXTINF:-1,TVBS新聞台
-https://live.tvfix.org/live/tvbsnews/1/v4000000/index.m3u8
+https://t44.iptv200.com/live/tvbs.flv?sign=1758460318-18725381f1c50eac7f25a8029daeedbe
 #EXTINF:-1,TVBS新聞台
-http://198.16.100.186:8278/tvbs_n/playlist.m3u8?tid=MA4A2233260122332601&ct=19249&tsum=513a9dcb42fa8b98e1792d513dd3e2ee
+https://live.tvfix.org/live/tvbsnews/1/v4000000/index.m3u8
 #EXTINF:-1,中視 HD
 https://smart.pendy.dpdns.org/Smart.php?id=zhongshihd_twn
 #EXTINF:-1,中天新聞台
@@ -61,12 +61,6 @@ http://61.221.215.25:8800/hls/48/index.m3u8
 rtmp://f13h.mine.nu:1935/sat/tv701
 #EXTINF:-1,緯來育樂台
 rtmp://f13h.mine.nu/sat/tv701
-#EXTINF:-1,靖天日本台
-https://epg.pw/stream/a0139192e3443869304e1c3e3c3d24699e3673ba7f37e40524356affc6bfecb0.m3u8
-#EXTINF:-1,靖天日本台
-https://epg.pw/stream/e5484f7f83c1ae2a81987ca8749cee125d994c8d6eb5f251d6cd9a7d60fb792d.m3u8
-#EXTINF:-1,靖天日本台
-https://epg.pw/stream/a0329e8161481d34004df71a5564d22f0a144482f3faed8ec5663dd8fa764d80.m3u8
 #EXTINF:-1,三立戲劇
 http://61.221.215.25:8800/hls/41/index.m3u8
 #EXTINF:-1,三立台灣台
