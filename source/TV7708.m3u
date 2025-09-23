@@ -19,18 +19,16 @@ http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
 http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
 #EXTINF:-1,民視新聞 HD
 http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
+#EXTINF:-1,華視新聞 HD
+http://152.32.229.52:5050/4gtv-4gtv041/index.m3u8?proxy=true
 #EXTINF:-1,東森新聞美洲台
 http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
 #EXTINF:-1,TVBS 亞洲台
 http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
 #EXTINF:-1,TVBS 亞洲台
 http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
-#EXTINF:-1,TVBS新聞台
-https://t44.iptv200.com/live/tvbs.flv?sign=1758460318-18725381f1c50eac7f25a8029daeedbe
-#EXTINF:-1,TVBS新聞台
-https://live.tvfix.org/live/tvbsnews/1/v4000000/index.m3u8
 #EXTINF:-1,中視 HD
-https://smart.pendy.dpdns.org/Smart.php?id=zhongshihd_twn
+http://152.32.229.52:5050/4gtv-4gtv040/index.m3u8?proxy=true
 #EXTINF:-1,中天新聞台
 http://tlive24.uk/livehttpplay?channel_id=20163
 #EXTINF:-1,中天新聞台
@@ -373,8 +371,12 @@ http://epg.112114.xyz/douyu/9650849
 http://live.streamingfast.net/osmflivech45.m3u8
 #EXTINF:-1,GOOD卡通
 https://dqhxk7sbp7xog.cloudfront.net/osmflivech45.m3u8
-#EXTINF:-1,卡通輪播
-https://manifest.googlevideo.com/api/manifest/hls_variant/expire/1754329544/ei/aJ2QaNGfDKyS1d8P7OKt2AY/ip/114.26.201.215/id/N6lNLi8AKI4.1/source/yt_live_broadcast/requiressl/yes/xpc/EgVo2aDSNQ%3D%3D/tx/51548072/txs/51548072%2C51548073%2C51548074%2C51548075%2C51548076%2C51548077/hfr/1/playlist_duration/30/manifest_duration/30/maudio/1/gcr/tw/bui/AY1jyLM8GRYpincQwqCYIp3YQWOPlvC5uXKO7uv20nd-75HzH_Cr9lileLHV6ZOP4Q-DUDxk8aoP6fuF/spc/l3OVKYqaLvW4A3VYTuCn7z2i2oIl4JmDR9liHG4hJ6E3lpjcCB6WWxj6W2DZko0vWaA/vprv/1/go/1/rqh/5/pacing/0/nvgoi/1/ncsapi/1/keepalive/yes/fexp/51355912/dover/11/itag/0/playlist_type/DVR/sparams/expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Ctx%2Ctxs%2Chfr%2Cplaylist_duration%2Cmanifest_duration%2Cmaudio%2Cgcr%2Cbui%2Cspc%2Cvprv%2Cgo%2Crqh%2Citag%2Cplaylist_type/sig/AJfQdSswRQIhANBII5PE43EgFjbATeoSCjuQDJtESN6QZCArfkORaxj3AiBuRiNGqO1iD2wQYuS0eppQGkpbV1PjN7_xjqdgfNX3Eg%3D%3D/file/index.m3u8
+#EXTINF:-1,中華小當家
+http://152.32.229.52:5050/ofiii168/index.m3u8?proxy=true
+#EXTINF:-1,中華小當家
+http://61.221.215.25:8800/hls/40/index.m3u8
+#EXTINF:-1,蠟筆小新
+http://152.32.229.52:5050/ofiii165/index.m3u8?proxy=true
 #EXTINF:-1,哈哈炫動
 http://210.210.155.35/qwr9ew/s/s50/index.m3u8
 #EXTINF:-1,哈哈炫動
@@ -401,8 +403,6 @@ http://aktv.top/AKTV/live/aktv3/nickjr/AKTV.m3u8
 http://aktv.top/AKTV/live/aktv3/animaxhk/AKTV.m3u8
 #EXTINF:-1,ZooMoo-AKtv
 http://aktv.top/AKTV/live/aktv3/zoomoo/AKTV.m3u8
-#EXTINF:-1,中華小當家
-http://61.221.215.25:8800/hls/40/index.m3u8
 #EXTINF:-1,🌍人文地理
 #genre#
 #EXTINF:-1,动物世界
