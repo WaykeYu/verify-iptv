@@ -46,6 +46,11 @@ jobs:
       - name: Update README
         run: echo "過濾重覆及有效性自動檢測 IPTV $DATE" > README.md
 
+      - name: Clean up large log files
+        run: |
+          echo "Removing large log files..."
+          find . -name "*.log" -type f -delete
+
       - name: Commit and push changes
         run: |
           git config --local user.email "actions@126.com"
@@ -53,3 +58,9 @@ jobs:
           git add .
           git commit -m "Auto update: $DATE" || echo "No changes to commit"
           git push
+      
+      
+      
+      
+      
+      
