@@ -21,6 +21,7 @@ SOURCES = {
     "408z13.m3u": "https://files.catbox.moe/408zl3.txt",
     "最好的18+.m3u": "https://cyuan.netlify.app/tvbox/lives/18+/18%F0%9F%88%B2%EF%B8%8F.txt",
     "国区老传媒.m3u": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/json/adult_2.txt",
+    "me.m3u": "https://github.com/xfcjp/xfcjp.github.io/raw/master/me.txt"
 }
 
 GITHUB_REPO_DIR = "/home/runner/work/verify-iptv/verify-iptv"
