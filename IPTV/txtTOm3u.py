@@ -12,6 +12,15 @@ SOURCES = {
     "UBTV.m3u": "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/UBTV",
     "TV7708.m3u": "https://raw.githubusercontent.com/ji3g4ao3sm3/tv/refs/heads/main/7708.txt",
     "TW_only.m3u": "https://raw.githubusercontent.com/WaykeYu/MyTV_tw/refs/heads/main/Source/TW_only.txt",
+    "listx.m3u": "https://github.com/gaotianliuyun/gao/raw/master/listx.txt",
+    "PEHy.m3u": "https://qu.ax/PEHy.txt",
+    "XstR.m3u": "https://qu.ax/XstR.txt",
+    "w36yqk.m3u": "https://files.catbox.moe/w36yqk.txt",
+    "18+.m3u": "https://d.kstore.space/download/5447/18/18禁.txt",
+    "2o0yqn.m3u": "https://files.catbox.moe/2o0yqn.txt",
+    "408z13.m3u": "https://files.catbox.moe/408zl3.txt",
+    "最好的18+.m3u": "https://cyuan.netlify.app/tvbox/lives/18+/18%F0%9F%88%B2%EF%B8%8F.txt",
+    "国区老传媒.m3u": "https://raw.githubusercontent.com/qirenzhidao/tvbox18/main/json/adult_2.txt",
 }
 
 GITHUB_REPO_DIR = "/home/runner/work/verify-iptv/verify-iptv"
