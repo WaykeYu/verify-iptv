@@ -86,16 +86,26 @@ class RequestManager:
         session = requests.Session()
         session.headers.update(RequestManager.get_headers())
         
-        # 配置重試策略
+        # 配置重試策略 - 兼容新舊版本 urllib3
         from requests.adapters import HTTPAdapter
         from urllib3.util.retry import Retry
         
-        retry_strategy = Retry(
-            total=3,
-            status_forcelist=[429, 500, 502, 503, 504],
-            method_whitelist=["HEAD", "GET", "OPTIONS"],
-            backoff_factor=1
-        )
+        try:
+            # 嘗試新版本參數名稱
+            retry_strategy = Retry(
+                total=3,
+                status_forcelist=[429, 500, 502, 503, 504],
+                allowed_methods=["HEAD", "GET", "OPTIONS"],  # 新版本參數
+                backoff_factor=1
+            )
+        except TypeError:
+            # 回退到舊版本參數名稱
+            retry_strategy = Retry(
+                total=3,
+                status_forcelist=[429, 500, 502, 503, 504],
+                method_whitelist=["HEAD", "GET", "OPTIONS"],  # 舊版本參數
+                backoff_factor=1
+            )
         
         adapter = HTTPAdapter(max_retries=retry_strategy)
         session.mount("http://", adapter)
