@@ -1,10 +1,6 @@
 #EXTM3U
 #EXTINF:-1,<meta name="viewport" content="width=device-width
  initial-scale=1.0">
-#EXTINF:-1,zoneId: '10636298'
-
-#EXTINF:-1,maxAds: 1
-
 #EXTINF:-1,font-family: 'Open Sans'
  sans-serif;
 #EXTINF:-1,.file-container img
