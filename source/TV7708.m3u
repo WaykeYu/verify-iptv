@@ -19,22 +19,18 @@ http://38.64.72.148/hls/modn/list/4012/playlist.m3u8
 http://38.64.72.148:80/hls/modn/list/4012/chunklist0.m3u8
 #EXTINF:-1,民視新聞 HD
 http://38.64.72.148/hls/modn/list/4012/chunklist0.m3u8
-#EXTINF:-1,華視新聞 HD
-http://152.32.229.52:5050/4gtv-4gtv041/index.m3u8?proxy=true
+#EXTINF:-1,寰宇新聞
+http://nmk.ioapk.com:5050/of-litv-longturn14/index.m3u8?proxy=true
 #EXTINF:-1,東森新聞美洲台
 http://38.64.72.148:80/hls/modn/list/2015/chunklist0.m3u8
 #EXTINF:-1,TVBS 亞洲台
 http://38.64.72.148:80/hls/modn/list/4005/chunklist1.m3u8
 #EXTINF:-1,TVBS 亞洲台
 http://38.64.72.148/hls/modn/list/4005/playlist.m3u8
-#EXTINF:-1,中視 HD
-http://152.32.229.52:5050/4gtv-4gtv040/index.m3u8?proxy=true
-#EXTINF:-1,中天新聞台
-http://tlive24.uk/livehttpplay?channel_id=20163
-#EXTINF:-1,中天新聞台
-https://k44991.kylintv.tv/live/cti_iphone.m3u8
-#EXTINF:-1,非凡新聞
-http://198.16.100.186:8278/feifannews_twn/playlist.m3u8?tid=m050e7aad65f614336734&ct=17874&tsum=4ea1b829d195ac69a6c2ca51b21ae378
+#EXTINF:-1,鏡新聞
+https://d36dgdk71xuzzg.cloudfront.net/v1/manifest/3a2ac8e6b6c76471996ebf627393d9c9417a60b6/linetv-6-627778910172-MediaTailor-production/c9b2313d-efdd-4777-9fae-573be8a86755/0.m3u8
+#EXTINF:-1,中天新聞
+http://www.kaniptv.cn/ts1.php?ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTA2LjAuMC4wIFNhZmFyaS81MzcuMzY=&hls=aHR0cDovLzExOS45MS43LjE2OToyMDI2L1RXLnBocD9pZD3kuK3lpKnmlrDpl7vlj7A=
 #EXTINF:-1,HBO影院
 http://220.134.196.147:9520/http/60.251.39.91:8081/hls/71/813/ch41.m3u8
 #EXTINF:-1,🎭台灣綜合頻道
